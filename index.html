@@ -1,239 +1,484 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𝓕𝓪𝓷𝓬𝔂 𝓣𝓮𝔁𝓽 Generator - Stylish Fonts & Symbols ✨</title>
-    <meta name="description" content="Free fancy text generator with 100+ stylish fonts, symbols, and decorations. Copy and paste fancy letters for Instagram, Discord, TikTok, and more!">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Free fancy text generator with 150+ stylish fonts, symbols, and decorations. Copy and paste fancy letters for Instagram, Discord, TikTok, and more!">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Space Grotesk', 'sans-serif'],
+                        'outfit': ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#050507',
+                            800: '#0a0a0f',
+                            700: '#12121a',
+                            600: '#1a1a25',
+                            500: '#22222f',
+                        },
+                        accent: {
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            cyan: '#22d3ee',
+                            blue: '#6366f1',
+                            green: '#10b981',
+                            orange: '#f97316',
+                            yellow: '#eab308',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 20s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'gradient': 'gradient 8s linear infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'fade-in': 'fadeIn 0.5s ease forwards',
+                        'slide-up': 'slideUp 0.5s ease forwards',
+                        'scale-in': 'scaleIn 0.3s ease forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '33%': { transform: 'translateY(-30px) rotate(5deg)' },
+                            '66%': { transform: 'translateY(-15px) rotate(-5deg)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                    },
+                    backgroundSize: {
+                        '300%': '300%',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #22222f; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animated Gradient Background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899, #6366f1);
+            background-size: 300% 300%;
+            animation: gradient 8s linear infinite;
+        }
+
+        /* Shimmer Effect */
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s linear infinite;
+        }
+
+        /* Glow Effects */
+        .glow-purple { box-shadow: 0 0 30px rgba(139, 92, 246, 0.3); }
+        .glow-pink { box-shadow: 0 0 30px rgba(236, 72, 153, 0.3); }
+        .glow-cyan { box-shadow: 0 0 30px rgba(34, 211, 238, 0.3); }
+
+        /* Card Gradient Border */
+        .card-gradient {
+            position: relative;
+            background: #12121a;
+            border-radius: 16px;
+        }
+        .card-gradient::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(168, 85, 247, 0.5), rgba(236, 72, 153, 0.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .card-gradient:hover::before { opacity: 1; }
+
+        /* Hide scrollbar for tabs */
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+        /* Text Balance */
+        .text-balance { text-wrap: balance; }
+
+        /* Selection */
+        ::selection { background: #6366f1; color: white; }
+    </style>
 </head>
-<body>
+<body class="bg-dark-800 text-white font-sans antialiased overflow-x-hidden">
     <!-- Animated Background -->
-    <div class="bg-animation">
-        <div class="floating-symbols">
-            <span class="float-symbol">✦</span>
-            <span class="float-symbol">✧</span>
-            <span class="float-symbol">❋</span>
-            <span class="float-symbol">✿</span>
-            <span class="float-symbol">❀</span>
-            <span class="float-symbol">✵</span>
-            <span class="float-symbol">❂</span>
-            <span class="float-symbol">✺</span>
-            <span class="float-symbol">❃</span>
-            <span class="float-symbol">✤</span>
-            <span class="float-symbol">✥</span>
-            <span class="float-symbol">❊</span>
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <!-- Gradient Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-purple/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-pink/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-blue/5 rounded-full blur-3xl"></div>
+        
+        <!-- Floating Symbols -->
+        <div class="floating-symbols text-2xl text-accent-purple/20">
+            <span class="absolute top-[10%] left-[10%] animate-float" style="animation-delay: 0s;">✦</span>
+            <span class="absolute top-[20%] left-[80%] animate-float" style="animation-delay: 2s;">✧</span>
+            <span class="absolute top-[40%] left-[5%] animate-float" style="animation-delay: 4s;">❋</span>
+            <span class="absolute top-[60%] left-[90%] animate-float" style="animation-delay: 6s;">✿</span>
+            <span class="absolute top-[80%] left-[15%] animate-float" style="animation-delay: 8s;">❀</span>
+            <span class="absolute top-[30%] left-[50%] animate-float" style="animation-delay: 1s;">✵</span>
+            <span class="absolute top-[70%] left-[70%] animate-float" style="animation-delay: 3s;">❂</span>
+            <span class="absolute top-[15%] left-[30%] animate-float" style="animation-delay: 5s;">✺</span>
+            <span class="absolute top-[85%] left-[40%] animate-float" style="animation-delay: 7s;">❃</span>
+            <span class="absolute top-[50%] left-[20%] animate-float" style="animation-delay: 9s;">✤</span>
+            <span class="absolute top-[25%] left-[60%] animate-float" style="animation-delay: 10s;">★</span>
+            <span class="absolute top-[75%] left-[85%] animate-float" style="animation-delay: 11s;">♥</span>
         </div>
     </div>
 
     <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">
-                <span class="logo-icon">✦</span>
-                <span class="logo-text">𝓕𝓪𝓷𝓬𝔂𝓣𝓮𝔁𝓽</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#generator" class="nav-link active">Generator</a></li>
-                <li><a href="#symbols" class="nav-link">Symbols</a></li>
-                <li><a href="#decorations" class="nav-link">Decorations</a></li>
-                <li><a href="#emojis" class="nav-link">Emojis</a></li>
-            </ul>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-800/80 backdrop-blur-xl border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 sm:gap-3 group">
+                    <span class="text-2xl sm:text-3xl gradient-text animate-pulse-slow">✦</span>
+                    <span class="font-display text-lg sm:text-xl font-bold tracking-tight">𝓕𝓪𝓷𝓬𝔂𝓣𝓮𝔁𝓽</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <ul class="hidden md:flex items-center gap-1">
+                    <li><a href="#generator" class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Generator</a></li>
+                    <li><a href="#fonts" class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Fonts</a></li>
+                    <li><a href="#symbols" class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Symbols</a></li>
+                    <li><a href="#decorations" class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Decorations</a></li>
+                    <li><a href="#emojis" class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Emojis</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/5 transition-colors" aria-label="Toggle menu">
+                    <span class="block w-6 h-0.5 bg-white rounded-full transition-all origin-center"></span>
+                    <span class="block w-6 h-0.5 bg-white rounded-full transition-all"></span>
+                    <span class="block w-6 h-0.5 bg-white rounded-full transition-all origin-center"></span>
+                </button>
+            </div>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark-700/95 backdrop-blur-xl border-b border-white/5">
+            <ul class="flex flex-col p-4 space-y-1">
+                <li><a href="#generator" class="block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">Generator</a></li>
+                <li><a href="#fonts" class="block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">Fonts</a></li>
+                <li><a href="#symbols" class="block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">Symbols</a></li>
+                <li><a href="#decorations" class="block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">Decorations</a></li>
+                <li><a href="#emojis" class="block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all">Emojis</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul class="mobile-nav-links">
-            <li><a href="#generator">Generator</a></li>
-            <li><a href="#symbols">Symbols</a></li>
-            <li><a href="#decorations">Decorations</a></li>
-            <li><a href="#emojis">Emojis</a></li>
-        </ul>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-badge">✨ 100+ Stylish Fonts</div>
-            <h1 class="hero-title">
+    <section class="relative pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-accent-purple/20 to-accent-pink/20 border border-accent-purple/30 mb-6 sm:mb-8 animate-pulse-slow">
+                <span class="text-accent-cyan text-sm font-medium">✨ 150+ Stylish Fonts</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-balance">
                 <span class="gradient-text">𝒞𝑜𝓅𝓎 𝒶𝓃𝒹 𝒫𝒶𝓈𝓉𝑒</span>
                 <br>
-                Fancy Text Generator
+                <span class="text-white">Fancy Text Generator</span>
             </h1>
-            <p class="hero-subtitle">
+
+            <!-- Subtitle -->
+            <p class="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed text-balance">
                 Transform your boring text into eye-catching stylish fonts instantly. 
                 Perfect for Instagram, Discord, TikTok, Twitter, and more!
             </p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">100+</span>
-                    <span class="stat-label">Font Styles</span>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-12">
+                <div class="flex flex-col items-center">
+                    <span class="font-display text-3xl sm:text-4xl font-bold gradient-text">150+</span>
+                    <span class="text-gray-500 text-sm mt-1">Font Styles</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number">1000+</span>
-                    <span class="stat-label">Symbols</span>
+                <div class="hidden sm:block w-px h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+                <div class="flex flex-col items-center">
+                    <span class="font-display text-3xl sm:text-4xl font-bold gradient-text">2000+</span>
+                    <span class="text-gray-500 text-sm mt-1">Symbols</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number">Free</span>
-                    <span class="stat-label">Forever</span>
+                <div class="hidden sm:block w-px h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+                <div class="flex flex-col items-center">
+                    <span class="font-display text-3xl sm:text-4xl font-bold gradient-text">Free</span>
+                    <span class="text-gray-500 text-sm mt-1">Forever</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Generator Section -->
-    <section id="generator" class="generator-section">
-        <div class="container">
-            <div class="input-wrapper">
-                <label for="textInput" class="input-label">
-                    <span class="label-icon">✎</span>
-                    Enter your text
+    <section id="generator" class="py-12 sm:py-16 relative z-10 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Input Area -->
+            <div class="max-w-3xl mx-auto mb-8 sm:mb-12">
+                <label for="textInput" class="flex items-center gap-2 text-sm font-medium text-gray-400 mb-3">
+                    <span>✎</span>
+                    <span>Enter your text</span>
                 </label>
-                <div class="input-container">
+                <div class="relative group">
                     <textarea 
                         id="textInput" 
-                        class="text-input" 
+                        class="w-full px-5 sm:px-6 py-4 sm:py-5 pr-14 bg-dark-700 border-2 border-white/10 rounded-2xl text-lg sm:text-xl text-white placeholder-gray-600 resize-none focus:outline-none focus:border-accent-purple/50 focus:ring-4 focus:ring-accent-purple/10 transition-all min-h-[120px]"
                         placeholder="Type something awesome..."
                         rows="3"
                     >Fancy Text</textarea>
-                    <button class="clear-btn" id="clearBtn" title="Clear text">✕</button>
+                    <button 
+                        id="clearBtn" 
+                        class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-xl bg-dark-600 text-gray-500 hover:bg-accent-purple hover:text-white transition-all"
+                        title="Clear text"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
 
-            <!-- Filter Tabs -->
-            <div class="filter-tabs">
-                <button class="filter-tab active" data-filter="all">All Styles</button>
-                <button class="filter-tab" data-filter="fancy">Fancy</button>
-                <button class="filter-tab" data-filter="bold">Bold</button>
-                <button class="filter-tab" data-filter="cursive">Cursive</button>
-                <button class="filter-tab" data-filter="special">Special</button>
-                <button class="filter-tab" data-filter="decorated">Decorated</button>
+            <!-- Quick Actions -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+                <button class="quick-action px-4 py-2 rounded-xl bg-dark-600 text-gray-400 hover:bg-accent-purple/20 hover:text-accent-purple transition-all text-sm font-medium" data-text="Hello World">Hello World</button>
+                <button class="quick-action px-4 py-2 rounded-xl bg-dark-600 text-gray-400 hover:bg-accent-pink/20 hover:text-accent-pink transition-all text-sm font-medium" data-text="Love">Love ♥</button>
+                <button class="quick-action px-4 py-2 rounded-xl bg-dark-600 text-gray-400 hover:bg-accent-cyan/20 hover:text-accent-cyan transition-all text-sm font-medium" data-text="Gaming">Gaming</button>
+                <button class="quick-action px-4 py-2 rounded-xl bg-dark-600 text-gray-400 hover:bg-accent-green/20 hover:text-accent-green transition-all text-sm font-medium" data-text="Cool">Cool</button>
+                <button class="quick-action px-4 py-2 rounded-xl bg-dark-600 text-gray-400 hover:bg-accent-orange/20 hover:text-accent-orange transition-all text-sm font-medium" data-text="Music">Music</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fonts Section -->
+    <section id="fonts" class="py-12 sm:py-16 relative z-10 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3">✦ Stylish Fonts</h2>
+                <p class="text-gray-500">Click any style to copy instantly</p>
             </div>
 
-            <!-- Font Results -->
-            <div class="results-grid" id="resultsGrid">
-                <!-- Results will be generated by JavaScript -->
+            <!-- Filter Tabs -->
+            <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-4 mb-6 justify-start sm:justify-center">
+                <button class="filter-tab flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-xl bg-gradient-to-r from-accent-purple to-accent-pink text-white text-sm font-medium transition-all" data-filter="all">All Styles</button>
+                <button class="filter-tab flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-xl bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-white text-sm font-medium transition-all" data-filter="fancy">Fancy</button>
+                <button class="filter-tab flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-xl bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-white text-sm font-medium transition-all" data-filter="bold">Bold</button>
+                <button class="filter-tab flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-xl bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-white text-sm font-medium transition-all" data-filter="cursive">Cursive</button>
+                <button class="filter-tab flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-xl bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-white text-sm font-medium transition-all" data-filter="special">Special</button>
+                <button class="filter-tab flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-xl bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-white text-sm font-medium transition-all" data-filter="decorated">Decorated</button>
+                <button class="filter-tab flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-xl bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-white text-sm font-medium transition-all" data-filter="aesthetic">Aesthetic</button>
+            </div>
+
+            <!-- Results Grid -->
+            <div id="resultsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Results generated by JS -->
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-8">
+                <button id="loadMoreBtn" class="hidden px-6 py-3 rounded-xl bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-white transition-all text-sm font-medium">
+                    Load More Styles
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Symbols Section -->
-    <section id="symbols" class="symbols-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">✦ Fancy Symbols & Characters</h2>
-                <p class="section-subtitle">Click any symbol to copy it instantly</p>
+    <section id="symbols" class="py-12 sm:py-16 bg-dark-700/50 relative z-10 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3">✦ Fancy Symbols & Characters</h2>
+                <p class="text-gray-500">Click any symbol to copy it instantly</p>
             </div>
 
             <!-- Symbol Categories -->
-            <div class="symbol-tabs">
-                <button class="symbol-tab active" data-category="stars">★ Stars</button>
-                <button class="symbol-tab" data-category="hearts">♥ Hearts</button>
-                <button class="symbol-tab" data-category="arrows">→ Arrows</button>
-                <button class="symbol-tab" data-category="flowers">✿ Flowers</button>
-                <button class="symbol-tab" data-category="music">♪ Music</button>
-                <button class="symbol-tab" data-category="zodiac">♈ Zodiac</button>
-                <button class="symbol-tab" data-category="chess">♔ Chess</button>
-                <button class="symbol-tab" data-category="currency">$ Currency</button>
-                <button class="symbol-tab" data-category="math">∑ Math</button>
-                <button class="symbol-tab" data-category="weather">☀ Weather</button>
-                <button class="symbol-tab" data-category="misc">✤ Misc</button>
+            <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-4 mb-6">
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-gradient-to-r from-accent-purple to-accent-pink text-white text-sm font-medium transition-all" data-category="stars">★ Stars</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="hearts">♥ Hearts</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="arrows">→ Arrows</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="flowers">✿ Flowers</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="music">♪ Music</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="zodiac">♈ Zodiac</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="chess">♔ Chess</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="currency">$ Currency</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="math">∑ Math</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="weather">☀ Weather</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="brackets">【】Brackets</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="lines">─ Lines</button>
+                <button class="symbol-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-category="misc">✤ Misc</button>
             </div>
 
-            <div class="symbols-grid" id="symbolsGrid">
-                <!-- Symbols will be generated by JavaScript -->
+            <!-- Symbols Grid -->
+            <div id="symbolsGrid" class="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-2 sm:gap-3">
+                <!-- Symbols generated by JS -->
             </div>
         </div>
     </section>
 
     <!-- Decorations Section -->
-    <section id="decorations" class="decorations-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">❋ Text Decorations</h2>
-                <p class="section-subtitle">Add beautiful borders and frames to your text</p>
+    <section id="decorations" class="py-12 sm:py-16 relative z-10 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3">❋ Text Decorations</h2>
+                <p class="text-gray-500">Add beautiful borders and frames to your text</p>
             </div>
 
-            <div class="decoration-input-wrapper">
+            <!-- Decoration Input -->
+            <div class="max-w-lg mx-auto mb-8">
                 <input 
                     type="text" 
                     id="decorationInput" 
-                    class="decoration-input" 
+                    class="w-full px-6 py-4 bg-dark-700 border-2 border-white/10 rounded-2xl text-lg text-white text-center placeholder-gray-600 focus:outline-none focus:border-accent-purple/50 focus:ring-4 focus:ring-accent-purple/10 transition-all"
                     placeholder="Your text here..."
                     value="Hello World"
                 >
             </div>
 
-            <div class="decorations-grid" id="decorationsGrid">
-                <!-- Decorations will be generated by JavaScript -->
+            <!-- Decorations Grid -->
+            <div id="decorationsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <!-- Decorations generated by JS -->
             </div>
         </div>
     </section>
 
     <!-- Emojis Section -->
-    <section id="emojis" class="emojis-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">😀 Emoji Collection</h2>
-                <p class="section-subtitle">Browse and copy emojis by category</p>
+    <section id="emojis" class="py-12 sm:py-16 bg-dark-700/50 relative z-10 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3">😀 Emoji Collection</h2>
+                <p class="text-gray-500">Browse and copy emojis by category</p>
             </div>
 
-            <div class="emoji-tabs">
-                <button class="emoji-tab active" data-emoji="smileys">😀 Smileys</button>
-                <button class="emoji-tab" data-emoji="gestures">👋 Gestures</button>
-                <button class="emoji-tab" data-emoji="animals">🐱 Animals</button>
-                <button class="emoji-tab" data-emoji="food">🍕 Food</button>
-                <button class="emoji-tab" data-emoji="activities">⚽ Activities</button>
-                <button class="emoji-tab" data-emoji="travel">✈️ Travel</button>
-                <button class="emoji-tab" data-emoji="objects">💡 Objects</button>
-                <button class="emoji-tab" data-emoji="nature">🌸 Nature</button>
+            <!-- Emoji Categories -->
+            <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-4 mb-6">
+                <button class="emoji-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-gradient-to-r from-accent-purple to-accent-pink text-white text-sm font-medium transition-all" data-emoji="smileys">😀 Smileys</button>
+                <button class="emoji-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-emoji="gestures">👋 Gestures</button>
+                <button class="emoji-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-emoji="animals">🐱 Animals</button>
+                <button class="emoji-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-emoji="food">🍕 Food</button>
+                <button class="emoji-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-emoji="activities">⚽ Activities</button>
+                <button class="emoji-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-emoji="travel">✈️ Travel</button>
+                <button class="emoji-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-emoji="objects">💡 Objects</button>
+                <button class="emoji-tab flex-shrink-0 px-4 py-2.5 rounded-full bg-dark-600 border border-white/10 text-gray-400 hover:border-accent-purple/50 hover:text-white text-sm font-medium transition-all" data-emoji="nature">🌸 Nature</button>
             </div>
 
-            <div class="emojis-grid" id="emojisGrid">
-                <!-- Emojis will be generated by JavaScript -->
+            <!-- Emojis Grid -->
+            <div id="emojisGrid" class="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-2">
+                <!-- Emojis generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Text Combiner Section -->
+    <section id="combiner" class="py-12 sm:py-16 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-3">🎨 Text Combiner</h2>
+                <p class="text-gray-500">Mix symbols with your text for unique combinations</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-dark-700 rounded-2xl p-6 border border-white/10">
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <label class="text-sm text-gray-500 mb-2 block">Prefix</label>
+                            <input type="text" id="prefixInput" class="w-full px-4 py-3 bg-dark-600 border border-white/10 rounded-xl text-white text-center focus:outline-none focus:border-accent-purple/50 transition-all" placeholder="★" value="★">
+                        </div>
+                        <div>
+                            <label class="text-sm text-gray-500 mb-2 block">Your Text</label>
+                            <input type="text" id="combinerText" class="w-full px-4 py-3 bg-dark-600 border border-white/10 rounded-xl text-white text-center focus:outline-none focus:border-accent-purple/50 transition-all" placeholder="Text" value="Fancy">
+                        </div>
+                        <div>
+                            <label class="text-sm text-gray-500 mb-2 block">Suffix</label>
+                            <input type="text" id="suffixInput" class="w-full px-4 py-3 bg-dark-600 border border-white/10 rounded-xl text-white text-center focus:outline-none focus:border-accent-purple/50 transition-all" placeholder="★" value="★">
+                        </div>
+                    </div>
+                    <div class="flex gap-2 flex-wrap justify-center mb-4">
+                        <button class="combiner-preset px-3 py-1.5 rounded-lg bg-dark-600 text-gray-400 hover:bg-accent-purple/20 hover:text-accent-purple text-sm transition-all" data-prefix="✦" data-suffix="✦">✦ Stars ✦</button>
+                        <button class="combiner-preset px-3 py-1.5 rounded-lg bg-dark-600 text-gray-400 hover:bg-accent-pink/20 hover:text-accent-pink text-sm transition-all" data-prefix="♥" data-suffix="♥">♥ Hearts ♥</button>
+                        <button class="combiner-preset px-3 py-1.5 rounded-lg bg-dark-600 text-gray-400 hover:bg-accent-cyan/20 hover:text-accent-cyan text-sm transition-all" data-prefix="【" data-suffix="】">【 Box 】</button>
+                        <button class="combiner-preset px-3 py-1.5 rounded-lg bg-dark-600 text-gray-400 hover:bg-accent-green/20 hover:text-accent-green text-sm transition-all" data-prefix="『" data-suffix="』">『 Fancy 』</button>
+                        <button class="combiner-preset px-3 py-1.5 rounded-lg bg-dark-600 text-gray-400 hover:bg-accent-orange/20 hover:text-accent-orange text-sm transition-all" data-prefix="꧁༺" data-suffix="༻꧂">꧁༺ Royal ༻꧂</button>
+                    </div>
+                    <div id="combinerResult" class="p-4 bg-dark-800 rounded-xl text-center text-xl cursor-pointer hover:bg-dark-900 transition-all border border-white/5">
+                        ★ Fancy ★
+                    </div>
+                    <p class="text-center text-gray-600 text-sm mt-2">Click to copy</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="logo-icon">✦</span>
-                    <span class="logo-text">𝓕𝓪𝓷𝓬𝔂𝓣𝓮𝔁𝓽</span>
+    <footer class="py-12 border-t border-white/5 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <span class="text-3xl gradient-text">✦</span>
+                    <span class="font-display text-xl font-bold">𝓕𝓪𝓷𝓬𝔂𝓣𝓮𝔁𝓽</span>
                 </div>
-                <p class="footer-text">
-                    Transform your text into beautiful stylish fonts. Free forever.
-                </p>
-                <div class="footer-links">
-                    <a href="#generator">Generator</a>
-                    <a href="#symbols">Symbols</a>
-                    <a href="#decorations">Decorations</a>
-                    <a href="#emojis">Emojis</a>
-                </div>
+                <p class="text-gray-500 max-w-md mx-auto">Transform your text into beautiful stylish fonts. Free forever, no sign up required.</p>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 FancyText Generator. Made with ♥</p>
+            <div class="flex flex-wrap justify-center gap-6 mb-8">
+                <a href="#generator" class="text-gray-500 hover:text-accent-purple transition-colors">Generator</a>
+                <a href="#fonts" class="text-gray-500 hover:text-accent-purple transition-colors">Fonts</a>
+                <a href="#symbols" class="text-gray-500 hover:text-accent-purple transition-colors">Symbols</a>
+                <a href="#decorations" class="text-gray-500 hover:text-accent-purple transition-colors">Decorations</a>
+                <a href="#emojis" class="text-gray-500 hover:text-accent-purple transition-colors">Emojis</a>
+            </div>
+            <div class="text-center pt-8 border-t border-white/5">
+                <p class="text-gray-600 text-sm">© 2025 FancyText Generator. Made with ♥ for creators everywhere.</p>
             </div>
         </div>
     </footer>
 
     <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <span class="toast-icon">✓</span>
-        <span class="toast-message">Copied to clipboard!</span>
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-24 opacity-0 pointer-events-none z-50 transition-all duration-300 ease-out">
+        <div class="flex items-center gap-3 px-5 py-3 bg-dark-700 border border-accent-green/50 rounded-full shadow-lg shadow-accent-green/20">
+            <span class="w-6 h-6 flex items-center justify-center bg-accent-green rounded-full text-white text-xs">✓</span>
+            <span class="text-sm font-medium text-white">Copied to clipboard!</span>
+        </div>
     </div>
 
     <script src="script.js"></script>
