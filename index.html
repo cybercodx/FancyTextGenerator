@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeType | Professional Font Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-blobs"></div>
+
+    <main class="container">
+        <header>
+            <div class="logo">
+                <i class="ri-quill-pen-line"></i> LuxeType
+            </div>
+            <h1>Generate <span class="gradient-text">Fancy Text</span></h1>
+            <p>Type below to transform your text into stylish unicode fonts.</p>
+        </header>
+
+        <section class="input-section">
+            <div class="input-wrapper">
+                <input type="text" id="userInput" placeholder="Type something awesome here..." autocomplete="off">
+                <button id="clearBtn" title="Clear text"><i class="ri-close-circle-line"></i></button>
+            </div>
+        </section>
+
+        <section class="output-grid" id="outputGrid">
+            <div class="placeholder-state">
+                <i class="ri-text"></i>
+                <p>Start typing to see the magic happen</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden">
+        <i class="ri-check-double-line"></i> Copied to clipboard!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
