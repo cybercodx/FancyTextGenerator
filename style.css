@@ -1,0 +1,212 @@
+:root {
+    --primary: #6366f1;
+    --secondary: #a855f7;
+    --bg-dark: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --font-ui: 'Outfit', sans-serif;
+    --glass: blur(12px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-ui);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Effects */
+.background-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.15), transparent 25%);
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--text-muted);
+}
+
+/* Input Section */
+.input-section {
+    position: sticky;
+    top: 1rem;
+    z-index: 10;
+    margin-bottom: 2rem;
+}
+
+.input-wrapper {
+    position: relative;
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: var(--glass);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: white;
+    font-family: var(--font-ui);
+    outline: none;
+}
+
+#clearBtn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 1rem;
+    transition: color 0.3s;
+}
+
+#clearBtn:hover {
+    color: var(--secondary);
+}
+
+/* Output Grid */
+.output-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.font-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.font-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);
+}
+
+.font-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.font-preview {
+    font-size: 1.2rem;
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+/* Placeholder State */
+.placeholder-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.placeholder-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    color: var(--bg-dark);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 100;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.toast.hidden {
+    bottom: -100px;
+    opacity: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    .container { padding: 2rem 1rem; }
+    .output-grid { grid-template-columns: 1fr; }
+}
