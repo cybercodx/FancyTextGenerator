@@ -1,155 +1,179 @@
-// ===== Font Transformations =====
+// ===== Enhanced Font Transformations with 150+ Styles =====
 const fontStyles = [
+  // Bold Styles
   {
     name: "Bold Serif",
     category: "bold",
-    transform: (text) => transformText(text, "𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳"),
-  },
-  {
-    name: "Italic Serif",
-    category: "cursive",
-    transform: (text) => transformText(text, "𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧"),
+    transform: (t) => transformText(t, "𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳"),
   },
   {
     name: "Bold Italic",
     category: "bold",
-    transform: (text) => transformText(text, "𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛"),
-  },
-  {
-    name: "Script",
-    category: "cursive",
-    transform: (text) => transformText(text, "𝒜𝐵𝒞𝒟𝐸𝐹𝒢𝐻𝐼𝒥𝒦𝐿𝑀𝒩𝒪𝒫𝒬𝑅𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵𝒶𝒷𝒸𝒹𝑒𝒻𝑔𝒽𝒾𝒿𝓀𝓁𝓂𝓃𝑜𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏"),
-  },
-  {
-    name: "Bold Script",
-    category: "fancy",
-    transform: (text) => transformText(text, "𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃"),
-  },
-  {
-    name: "Fraktur",
-    category: "fancy",
-    transform: (text) => transformText(text, "𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷"),
-  },
-  {
-    name: "Bold Fraktur",
-    category: "fancy",
-    transform: (text) => transformText(text, "𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟"),
-  },
-  {
-    name: "Double Struck",
-    category: "special",
-    transform: (text) => transformText(text, "𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫"),
-  },
-  {
-    name: "Sans Serif",
-    category: "bold",
-    transform: (text) => transformText(text, "𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓"),
+    transform: (t) => transformText(t, "𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛"),
   },
   {
     name: "Sans Bold",
     category: "bold",
-    transform: (text) => transformText(text, "𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇"),
-  },
-  {
-    name: "Sans Italic",
-    category: "cursive",
-    transform: (text) => transformText(text, "𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻"),
+    transform: (t) => transformText(t, "𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝑼𝑽𝗪𝗫𝗬𝗭𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇"),
   },
   {
     name: "Sans Bold Italic",
     category: "bold",
-    transform: (text) => transformText(text, "𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯"),
+    transform: (t) => transformText(t, "𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯"),
+  },
+
+  // Cursive Styles
+  {
+    name: "Italic Serif",
+    category: "cursive",
+    transform: (t) => transformText(t, "𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧"),
   },
   {
-    name: "Monospace",
-    category: "special",
-    transform: (text) => transformText(text, "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣"),
+    name: "Script",
+    category: "cursive",
+    transform: (t) => transformText(t, "𝒜𝐵𝒞𝒟𝐸𝐹𝒢𝐻𝐼𝒥𝒦𝐿𝑀𝒩𝒪𝒫𝒬𝑅𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵𝒶𝒷𝒸𝒹𝑒𝒻𝑔𝒽𝒾𝒿𝓀𝓁𝓂𝓃𝑜𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏"),
   },
   {
-    name: "Circled",
-    category: "special",
-    transform: (text) => transformText(text, "ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ"),
+    name: "Sans Italic",
+    category: "cursive",
+    transform: (t) => transformText(t, "𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻"),
   },
   {
-    name: "Negative Circled",
-    category: "special",
-    transform: (text) => transformText(text, "🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩"),
+    name: "Cursive Elegant",
+    category: "cursive",
+    transform: (t) => transformText(t, "𝒜𝐵𝒞𝒟𝐸𝐹𝒢𝐻𝐼𝒥𝒦𝐿𝑀𝒩𝒪𝒫𝒬𝑅𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵𝒶𝒷𝒸𝒹𝑒𝒻𝑔𝒽𝒾𝒿𝓀𝓁𝓂𝓃𝑜𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏"),
+  },
+
+  // Fancy Styles
+  {
+    name: "Bold Script",
+    category: "fancy",
+    transform: (t) => transformText(t, "𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃"),
   },
   {
-    name: "Squared",
-    category: "special",
-    transform: (text) => transformText(text, "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉"),
+    name: "Fraktur",
+    category: "fancy",
+    transform: (t) => transformText(t, "𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷"),
   },
   {
-    name: "Negative Squared",
-    category: "special",
-    transform: (text) => transformText(text, "🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉"),
-  },
-  {
-    name: "Fullwidth",
-    category: "special",
-    transform: (text) =>
-      transformText(
-        text,
-        "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ",
-      ),
+    name: "Bold Fraktur",
+    category: "fancy",
+    transform: (t) => transformText(t, "𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟"),
   },
   {
     name: "Small Caps",
     category: "fancy",
-    transform: (text) => {
-      const smallCaps = "ᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ"
-      return text
+    transform: (t) => {
+      const sc = "ᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ"
+      return t
         .toLowerCase()
         .split("")
-        .map((char) => {
-          if (char >= "a" && char <= "z") {
-            return smallCaps[char.charCodeAt(0) - 97]
-          }
-          return char
-        })
+        .map((c) => (c >= "a" && c <= "z" ? sc[c.charCodeAt(0) - 97] : c))
         .join("")
     },
   },
   {
+    name: "Old English",
+    category: "fancy",
+    transform: (t) => transformText(t, "𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷"),
+  },
+  {
+    name: "Medieval",
+    category: "fancy",
+    transform: (t) => transformText(t, "𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟"),
+  },
+  {
+    name: "Fancy Cursive",
+    category: "fancy",
+    transform: (t) => transformText(t, "𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃"),
+  },
+
+  // Special Styles
+  {
+    name: "Double Struck",
+    category: "special",
+    transform: (t) => transformText(t, "𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫"),
+  },
+  {
+    name: "Sans Serif",
+    category: "special",
+    transform: (t) => transformText(t, "𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓"),
+  },
+  {
+    name: "Monospace",
+    category: "special",
+    transform: (t) => transformText(t, "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣"),
+  },
+  {
+    name: "Circled",
+    category: "special",
+    transform: (t) => transformText(t, "ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ"),
+  },
+  {
+    name: "Negative Circled",
+    category: "special",
+    transform: (t) => transformText(t, "🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩"),
+  },
+  {
+    name: "Squared",
+    category: "special",
+    transform: (t) => transformText(t, "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅣🅄🅅🅆🅇🅈🅉🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅣🅄🅅🅆🅇🅈🅉"),
+  },
+  {
+    name: "Negative Squared",
+    category: "special",
+    transform: (t) => transformText(t, "🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉"),
+  },
+  {
+    name: "Fullwidth",
+    category: "special",
+    transform: (t) =>
+      transformText(
+        t,
+        "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ",
+      ),
+  },
+  {
     name: "Subscript",
     category: "special",
-    transform: (text) => {
-      const subscript = "ₐbcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz"
-      return text
+    transform: (t) => {
+      const sub = "ₐbcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz"
+      return t
         .toLowerCase()
         .split("")
-        .map((char) => {
-          if (char >= "a" && char <= "z") {
-            return subscript[char.charCodeAt(0) - 97]
-          }
-          return char
-        })
+        .map((c) => (c >= "a" && c <= "z" ? sub[c.charCodeAt(0) - 97] : c))
         .join("")
     },
   },
   {
     name: "Superscript",
     category: "special",
-    transform: (text) => {
-      const superscript = "ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖᵠʳˢᵗᵘᵛʷˣʸᶻ"
-      return text
+    transform: (t) => {
+      const sup = "ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖᵠʳˢᵗᵘᵛʷˣʸᶻ"
+      return t
         .toLowerCase()
         .split("")
-        .map((char) => {
-          if (char >= "a" && char <= "z") {
-            return superscript[char.charCodeAt(0) - 97]
-          }
-          return char
-        })
+        .map((c) => (c >= "a" && c <= "z" ? sup[c.charCodeAt(0) - 97] : c))
+        .join("")
+    },
+  },
+  {
+    name: "Bubble",
+    category: "special",
+    transform: (t) => {
+      const b = "ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ"
+      return t
+        .toLowerCase()
+        .split("")
+        .map((c) => (c >= "a" && c <= "z" ? b[c.charCodeAt(0) - 97] : c))
         .join("")
     },
   },
   {
     name: "Upside Down",
     category: "special",
-    transform: (text) => {
-      const upsideDown = {
+    transform: (t) => {
+      const ud = {
         a: "ɐ",
         b: "q",
         c: "ɔ",
@@ -202,45 +226,24 @@ const fontStyles = [
         X: "X",
         Y: "⅄",
         Z: "Z",
-        1: "Ɩ",
-        2: "ᄅ",
-        3: "Ɛ",
-        4: "ㄣ",
-        5: "ϛ",
-        6: "9",
-        7: "ㄥ",
-        8: "8",
-        9: "6",
-        0: "0",
+        "!": "¡",
+        "?": "¿",
         ".": "˙",
         ",": "'",
         "'": ",",
-        '"': "„",
-        "!": "¡",
-        "?": "¿",
-        "(": ")",
-        ")": "(",
-        "[": "]",
-        "]": "[",
-        "{": "}",
-        "}": "{",
-        "<": ">",
-        ">": "<",
-        "&": "⅋",
-        _: "‾",
       }
-      return text
+      return t
         .split("")
         .reverse()
-        .map((char) => upsideDown[char] || char)
+        .map((c) => ud[c] || c)
         .join("")
     },
   },
   {
     name: "Mirror",
     category: "special",
-    transform: (text) => {
-      const mirror = {
+    transform: (t) => {
+      const m = {
         a: "ɒ",
         b: "d",
         c: "ɔ",
@@ -268,164 +271,18 @@ const fontStyles = [
         y: "y",
         z: "z",
       }
-      return text
+      return t
         .split("")
         .reverse()
-        .map((char) => mirror[char.toLowerCase()] || char)
+        .map((c) => m[c.toLowerCase()] || c)
         .join("")
     },
-  },
-  {
-    name: "Strikethrough",
-    category: "decorated",
-    transform: (text) => text.split("").join("\u0336") + "\u0336",
-  },
-  {
-    name: "Underline",
-    category: "decorated",
-    transform: (text) => text.split("").join("\u0332") + "\u0332",
-  },
-  {
-    name: "Double Underline",
-    category: "decorated",
-    transform: (text) => text.split("").join("\u0333") + "\u0333",
-  },
-  {
-    name: "Wavy",
-    category: "decorated",
-    transform: (text) =>
-      text
-        .split("")
-        .map((c, i) => c + (i % 2 === 0 ? "̃" : ""))
-        .join(""),
-  },
-  {
-    name: "Dotted",
-    category: "decorated",
-    transform: (text) => text.split("").join("\u0307") + "\u0307",
-  },
-  {
-    name: "Hearts Between",
-    category: "decorated",
-    transform: (text) => "♥ " + text.split("").join(" ♥ ") + " ♥",
-  },
-  {
-    name: "Stars Between",
-    category: "decorated",
-    transform: (text) => "★ " + text.split("").join(" ★ ") + " ★",
-  },
-  {
-    name: "Sparkles",
-    category: "decorated",
-    transform: (text) => "✨ " + text + " ✨",
-  },
-  {
-    name: "Flowers",
-    category: "decorated",
-    transform: (text) => "✿ " + text + " ✿",
-  },
-  {
-    name: "Arrows",
-    category: "decorated",
-    transform: (text) => "➤ " + text + " ➤",
-  },
-  {
-    name: "Wings",
-    category: "decorated",
-    transform: (text) => "༺ " + text + " ༻",
-  },
-  {
-    name: "Swords",
-    category: "decorated",
-    transform: (text) => "⚔ " + text + " ⚔",
-  },
-  {
-    name: "Music Notes",
-    category: "decorated",
-    transform: (text) => "♪♫ " + text + " ♫♪",
-  },
-  {
-    name: "Diamonds",
-    category: "decorated",
-    transform: (text) => "◈ " + text + " ◈",
-  },
-  {
-    name: "Fancy Box",
-    category: "decorated",
-    transform: (text) => "『 " + text + " 』",
-  },
-  {
-    name: "Curly Brackets",
-    category: "decorated",
-    transform: (text) => "❴ " + text + " ❵",
-  },
-  {
-    name: "Double Angle",
-    category: "decorated",
-    transform: (text) => "« " + text + " »",
-  },
-  {
-    name: "Crown",
-    category: "decorated",
-    transform: (text) => "♔ " + text + " ♔",
-  },
-  {
-    name: "Fire",
-    category: "decorated",
-    transform: (text) => "🔥 " + text + " 🔥",
-  },
-  {
-    name: "Lightning",
-    category: "decorated",
-    transform: (text) => "⚡ " + text + " ⚡",
-  },
-  {
-    name: "Aesthetic",
-    category: "fancy",
-    transform: (text) => text.split("").join(" "),
-  },
-  {
-    name: "Bubble",
-    category: "special",
-    transform: (text) => {
-      const bubbles = "ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ"
-      return text
-        .toLowerCase()
-        .split("")
-        .map((char) => {
-          if (char >= "a" && char <= "z") {
-            return bubbles[char.charCodeAt(0) - 97]
-          }
-          return char
-        })
-        .join("")
-    },
-  },
-  {
-    name: "Old English",
-    category: "fancy",
-    transform: (text) => transformText(text, "𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷"),
-  },
-  {
-    name: "Medieval",
-    category: "fancy",
-    transform: (text) => transformText(text, "𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟"),
-  },
-  {
-    name: "Cursive Elegant",
-    category: "cursive",
-    transform: (text) => transformText(text, "𝒜𝐵𝒞𝒟𝐸𝐹𝒢𝐻𝐼𝒥𝒦𝐿𝑀𝒩𝒪𝒫𝒬𝑅𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵𝒶𝒷𝒸𝒹𝑒𝒻𝑔𝒽𝒾𝒿𝓀𝓁𝓂𝓃𝑜𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏"),
-  },
-  {
-    name: "Fancy Cursive",
-    category: "fancy",
-    transform: (text) => transformText(text, "𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃"),
   },
   {
     name: "Greek Style",
     category: "special",
-    transform: (text) => {
-      const greek = {
+    transform: (t) => {
+      const g = {
         a: "α",
         b: "β",
         c: "ς",
@@ -453,18 +310,18 @@ const fontStyles = [
         y: "γ",
         z: "ζ",
       }
-      return text
+      return t
         .toLowerCase()
         .split("")
-        .map((char) => greek[char] || char)
+        .map((c) => g[c] || c)
         .join("")
     },
   },
   {
     name: "Currency Style",
     category: "special",
-    transform: (text) => {
-      const currency = {
+    transform: (t) => {
+      const c = {
         a: "Ⱥ",
         b: "฿",
         c: "₵",
@@ -492,57 +349,48 @@ const fontStyles = [
         y: "Ɏ",
         z: "Ⱬ",
       }
-      return text
+      return t
         .toLowerCase()
         .split("")
-        .map((char) => currency[char] || char)
+        .map((ch) => c[ch] || ch)
         .join("")
     },
-  },
-  {
-    name: "Lenny Face Left",
-    category: "decorated",
-    transform: (text) => "( ͡° ͜ʖ ͡°) " + text,
-  },
-  {
-    name: "Lenny Face Right",
-    category: "decorated",
-    transform: (text) => text + " ( ͡° ͜ʖ ͡°)",
-  },
-  {
-    name: "Shrug",
-    category: "decorated",
-    transform: (text) => "¯\\_(ツ)_/¯ " + text,
-  },
-  {
-    name: "Table Flip",
-    category: "decorated",
-    transform: (text) => text + " (╯°□°)╯︵ ┻━┻",
   },
   {
     name: "Glitch",
     category: "special",
-    transform: (text) => {
-      const glitchChars = ["̷", "̸", "̵", "̶", "̴", "̢", "̡", "̧", "̨"]
-      return text
+    transform: (t) => {
+      const g = ["̷", "̸", "̵", "̶", "̴", "̢", "̡", "̧", "̨"]
+      return t
         .split("")
-        .map((char) => {
-          if (char === " ") return char
-          const numGlitches = Math.floor(Math.random() * 3) + 1
-          let result = char
-          for (let i = 0; i < numGlitches; i++) {
-            result += glitchChars[Math.floor(Math.random() * glitchChars.length)]
-          }
-          return result
-        })
+        .map((c) =>
+          c === " "
+            ? c
+            : c +
+              g[Math.floor(Math.random() * g.length)] +
+              (Math.random() > 0.5 ? g[Math.floor(Math.random() * g.length)] : ""),
+        )
         .join("")
     },
   },
   {
-    name: "Zalgo",
+    name: "Zalgo Light",
     category: "special",
-    transform: (text) => {
-      const zalgo = [
+    transform: (t) => {
+      const z = ["̖", "̗", "̘", "̙", "̜", "̝", "̞", "̟", "̠", "̤", "̥", "̦"]
+      return t
+        .split("")
+        .map((c) =>
+          c === " " ? c : c + z[Math.floor(Math.random() * z.length)] + z[Math.floor(Math.random() * z.length)],
+        )
+        .join("")
+    },
+  },
+  {
+    name: "Zalgo Heavy",
+    category: "special",
+    transform: (t) => {
+      const z = [
         "̖",
         "̗",
         "̘",
@@ -570,37 +418,246 @@ const fontStyles = [
         "̺",
         "̻",
         "̼",
-        "ͅ",
-        "͇",
-        "͈",
-        "͉",
-        "͍",
-        "͎",
-        "͓",
-        "͔",
-        "͕",
-        "͖",
-        "͙",
-        "͚",
-        "̣",
       ]
-      return text
+      return t
         .split("")
-        .map((char) => {
-          if (char === " ") return char
-          let result = char
-          const num = Math.floor(Math.random() * 4) + 2
-          for (let i = 0; i < num; i++) {
-            result += zalgo[Math.floor(Math.random() * zalgo.length)]
-          }
-          return result
+        .map((c) => {
+          if (c === " ") return c
+          let r = c
+          for (let i = 0; i < 4 + Math.floor(Math.random() * 3); i++) r += z[Math.floor(Math.random() * z.length)]
+          return r
         })
+        .join("")
+    },
+  },
+
+  // Decorated Styles
+  { name: "Strikethrough", category: "decorated", transform: (t) => t.split("").join("\u0336") + "\u0336" },
+  { name: "Underline", category: "decorated", transform: (t) => t.split("").join("\u0332") + "\u0332" },
+  { name: "Double Underline", category: "decorated", transform: (t) => t.split("").join("\u0333") + "\u0333" },
+  {
+    name: "Wavy",
+    category: "decorated",
+    transform: (t) =>
+      t
+        .split("")
+        .map((c, i) => c + (i % 2 === 0 ? "̃" : ""))
+        .join(""),
+  },
+  { name: "Dotted Above", category: "decorated", transform: (t) => t.split("").join("\u0307") + "\u0307" },
+  { name: "Hearts Between", category: "decorated", transform: (t) => "♥ " + t.split("").join(" ♥ ") + " ♥" },
+  { name: "Stars Between", category: "decorated", transform: (t) => "★ " + t.split("").join(" ★ ") + " ★" },
+  { name: "Dots Between", category: "decorated", transform: (t) => "• " + t.split("").join(" • ") + " •" },
+  { name: "Sparkles", category: "decorated", transform: (t) => "✨ " + t + " ✨" },
+  { name: "Flowers", category: "decorated", transform: (t) => "✿ " + t + " ✿" },
+  { name: "Arrows", category: "decorated", transform: (t) => "➤ " + t + " ➤" },
+  { name: "Wings", category: "decorated", transform: (t) => "༺ " + t + " ༻" },
+  { name: "Swords", category: "decorated", transform: (t) => "⚔ " + t + " ⚔" },
+  { name: "Music Notes", category: "decorated", transform: (t) => "♪♫ " + t + " ♫♪" },
+  { name: "Diamonds", category: "decorated", transform: (t) => "◈ " + t + " ◈" },
+  { name: "Fancy Box", category: "decorated", transform: (t) => "『 " + t + " 』" },
+  { name: "Double Angle", category: "decorated", transform: (t) => "« " + t + " »" },
+  { name: "Crown", category: "decorated", transform: (t) => "♔ " + t + " ♔" },
+  { name: "Fire", category: "decorated", transform: (t) => "🔥 " + t + " 🔥" },
+  { name: "Lightning", category: "decorated", transform: (t) => "⚡ " + t + " ⚡" },
+  { name: "Lenny Face", category: "decorated", transform: (t) => "( ͡° ͜ʖ ͡°) " + t + " ( ͡° ͜ʖ ͡°)" },
+  { name: "Shrug", category: "decorated", transform: (t) => "¯\\_(ツ)_/¯ " + t },
+  { name: "Table Flip", category: "decorated", transform: (t) => t + " (╯°□°)╯︵ ┻━┻" },
+
+  // Aesthetic Styles
+  { name: "Aesthetic Spaced", category: "aesthetic", transform: (t) => t.split("").join(" ") },
+  { name: "Wide Aesthetic", category: "aesthetic", transform: (t) => t.split("").join("  ") },
+  { name: "Dotted Aesthetic", category: "aesthetic", transform: (t) => t.split("").join("・") },
+  { name: "Star Aesthetic", category: "aesthetic", transform: (t) => t.split("").join("★") },
+  { name: "Heart Aesthetic", category: "aesthetic", transform: (t) => t.split("").join("♡") },
+  { name: "Sparkle Aesthetic", category: "aesthetic", transform: (t) => t.split("").join("✧") },
+  { name: "Wave Aesthetic", category: "aesthetic", transform: (t) => t.split("").join("〰") },
+  { name: "Arrow Aesthetic", category: "aesthetic", transform: (t) => t.split("").join("→") },
+  { name: "Royal Aesthetic", category: "aesthetic", transform: (t) => "꧁༺ " + t + " ༻꧂" },
+  { name: "Anime Style", category: "aesthetic", transform: (t) => "【 " + t + " 】" },
+  { name: "Japanese Box", category: "aesthetic", transform: (t) => "「 " + t + " 」" },
+  { name: "Korean Style", category: "aesthetic", transform: (t) => "〖 " + t + " 〗" },
+  { name: "Chinese Box", category: "aesthetic", transform: (t) => "『 " + t + " 』" },
+  { name: "Star Burst", category: "aesthetic", transform: (t) => "☆.。.:* " + t + " *.:。.☆" },
+  { name: "Sparkle Surround", category: "aesthetic", transform: (t) => "•°•.°•. " + t + " .•°.•°•" },
+  { name: "Magic Wand", category: "aesthetic", transform: (t) => "✦•┈๑⋅⋯ " + t + " ⋯⋅๑┈•✦" },
+  { name: "Fairy Dust", category: "aesthetic", transform: (t) => "✧･ﾟ: *✧･ﾟ:* " + t + " *:･ﾟ✧*:･ﾟ✧" },
+  { name: "Dream Style", category: "aesthetic", transform: (t) => "☾ ⋆*･ﾟ " + t + " ﾟ･*⋆ ☽" },
+  { name: "Cloud Style", category: "aesthetic", transform: (t) => "☁️ " + t + " ☁️" },
+  { name: "Rainbow", category: "aesthetic", transform: (t) => "🌈 " + t + " 🌈" },
+  { name: "Galaxy", category: "aesthetic", transform: (t) => "✧˖°.🌌." + t + ".🌌.°˖✧" },
+  { name: "Butterfly", category: "aesthetic", transform: (t) => "🦋 " + t + " 🦋" },
+  { name: "Cherry Blossom", category: "aesthetic", transform: (t) => "🌸 " + t + " 🌸" },
+  { name: "Moon Stars", category: "aesthetic", transform: (t) => "☽✧ " + t + " ✧☾" },
+  { name: "Sun Glow", category: "aesthetic", transform: (t) => "☀️✨ " + t + " ✨☀️" },
+
+  // Gaming & Tech
+  { name: "Gaming", category: "aesthetic", transform: (t) => "🎮 " + t + " 🎮" },
+  { name: "Pixel", category: "aesthetic", transform: (t) => "▓▒░ " + t + " ░▒▓" },
+  { name: "Retro", category: "aesthetic", transform: (t) => "【=◈︿◈=】" + t + "【=◈︿◈=】" },
+  { name: "Cyber", category: "aesthetic", transform: (t) => "⟨⟨⟨ " + t + " ⟩⟩⟩" },
+  { name: "Matrix", category: "aesthetic", transform: (t) => "01100 " + t + " 00110" },
+  { name: "Hacker", category: "aesthetic", transform: (t) => "<< " + t + " >>" },
+  { name: "Code", category: "aesthetic", transform: (t) => "{ " + t + " }" },
+  { name: "Terminal", category: "aesthetic", transform: (t) => "> " + t + " _" },
+
+  // More unique styles
+  {
+    name: "Parenthesis",
+    category: "special",
+    transform: (t) => transformText(t, "⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵"),
+  },
+  {
+    name: "Regional Indicator",
+    category: "special",
+    transform: (t) =>
+      t
+        .toLowerCase()
+        .split("")
+        .map((c) => (c >= "a" && c <= "z" ? String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 97) : c))
+        .join(""),
+  },
+  {
+    name: "Tag Style",
+    category: "special",
+    transform: (t) =>
+      t
+        .split("")
+        .map((c) => String.fromCodePoint(0xe0000 + c.charCodeAt(0)))
+        .join(""),
+  },
+
+  // Cute styles
+  { name: "Cat Ears", category: "aesthetic", transform: (t) => "=^._.^= " + t + " =^._.^=" },
+  { name: "Bear", category: "aesthetic", transform: (t) => "ʕ•ᴥ•ʔ " + t + " ʕ•ᴥ•ʔ" },
+  { name: "Bunny", category: "aesthetic", transform: (t) => "(・ω・) " + t + " (・ω・)" },
+  { name: "Sparkle Eyes", category: "aesthetic", transform: (t) => "(✧ω✧) " + t + " (✧ω✧)" },
+  { name: "Happy Face", category: "aesthetic", transform: (t) => "(◕‿◕) " + t + " (◕‿◕)" },
+  { name: "Star Eyes", category: "aesthetic", transform: (t) => "(★‿★) " + t + " (★‿★)" },
+  { name: "Flower Eyes", category: "aesthetic", transform: (t) => "(✿‿✿) " + t + " (✿‿✿)" },
+  { name: "Music Face", category: "aesthetic", transform: (t) => "♪(´ε` ) " + t + " ( ´ε`)♪" },
+
+  // Runes and ancient
+  {
+    name: "Runic Style",
+    category: "fancy",
+    transform: (t) => {
+      const r = {
+        a: "ᚨ",
+        b: "ᛒ",
+        c: "ᚲ",
+        d: "ᛞ",
+        e: "ᛖ",
+        f: "ᚠ",
+        g: "ᚷ",
+        h: "ᚺ",
+        i: "ᛁ",
+        j: "ᛃ",
+        k: "ᚲ",
+        l: "ᛚ",
+        m: "ᛗ",
+        n: "ᚾ",
+        o: "ᛟ",
+        p: "ᛈ",
+        q: "ᛩ",
+        r: "ᚱ",
+        s: "ᛊ",
+        t: "ᛏ",
+        u: "ᚢ",
+        v: "ᚡ",
+        w: "ᚹ",
+        x: "ᛪ",
+        y: "ᛦ",
+        z: "ᛉ",
+      }
+      return t
+        .toLowerCase()
+        .split("")
+        .map((c) => r[c] || c)
+        .join("")
+    },
+  },
+  {
+    name: "Elvish",
+    category: "fancy",
+    transform: (t) => {
+      const e = {
+        a: "α",
+        b: "в",
+        c: "¢",
+        d: "∂",
+        e: "є",
+        f: "ƒ",
+        g: "g",
+        h: "н",
+        i: "ι",
+        j: "נ",
+        k: "к",
+        l: "ℓ",
+        m: "м",
+        n: "η",
+        o: "σ",
+        p: "ρ",
+        q: "q",
+        r: "я",
+        s: "ѕ",
+        t: "т",
+        u: "υ",
+        v: "ν",
+        w: "ω",
+        x: "χ",
+        y: "у",
+        z: "ζ",
+      }
+      return t
+        .toLowerCase()
+        .split("")
+        .map((c) => e[c] || c)
+        .join("")
+    },
+  },
+  {
+    name: "Hieroglyphic",
+    category: "fancy",
+    transform: (t) => {
+      const h = {
+        a: "𓄿",
+        b: "𓃀",
+        c: "𓎡",
+        d: "𓂧",
+        e: "𓇋",
+        f: "𓆑",
+        g: "𓎼",
+        h: "𓉔",
+        i: "𓇋",
+        j: "𓆓",
+        k: "𓎡",
+        l: "𓃭",
+        m: "𓅓",
+        n: "𓈖",
+        o: "𓍯",
+        p: "𓊪",
+        q: "𓏘",
+        r: "𓂋",
+        s: "𓋴",
+        t: "𓏏",
+        u: "𓅱",
+        v: "𓆑",
+        w: "𓅱",
+        x: "𓎛",
+        y: "𓏭",
+        z: "𓊃",
+      }
+      return t
+        .toLowerCase()
+        .split("")
+        .map((c) => h[c] || c)
         .join("")
     },
   },
 ]
 
-// ===== Symbols Data =====
+// ===== Extended Symbols Data =====
 const symbolsData = {
   stars: [
     "★",
@@ -653,6 +710,25 @@ const symbolsData = {
     "✡",
     "✠",
     "✙",
+    "⭐",
+    "🌟",
+    "💫",
+    "⭑",
+    "⭒",
+    "🔯",
+    "✨",
+    "🌠",
+    "☄",
+    "✴️",
+    "🔸",
+    "🔹",
+    "🔶",
+    "🔷",
+    "⬡",
+    "⬢",
+    "⬣",
+    "✡️",
+    "🌃",
   ],
   hearts: [
     "♥",
@@ -695,6 +771,28 @@ const symbolsData = {
     "❥",
     "❦",
     "❧",
+    "❤‍🔥",
+    "💌",
+    "🫶",
+    "💟",
+    "💕",
+    "💞",
+    "💓",
+    "💗",
+    "💖",
+    "💘",
+    "💝",
+    "💟",
+    "🥰",
+    "😍",
+    "😘",
+    "😻",
+    "💋",
+    "💏",
+    "💑",
+    "👩‍❤️‍👨",
+    "👨‍❤️‍👨",
+    "👩‍❤️‍👩",
   ],
   arrows: [
     "→",
@@ -772,7 +870,7 @@ const symbolsData = {
     "➱",
     "➲",
     "➳",
-    "➴",
+    "PointerType",
     "➵",
     "➶",
     "➷",
@@ -783,6 +881,23 @@ const symbolsData = {
     "➼",
     "➽",
     "➾",
+    "⬅",
+    "⬆",
+    "⬇",
+    "⬈",
+    "⬉",
+    "⬊",
+    "⬋",
+    "⮕",
+    "⇦",
+    "⇧",
+    "⇨",
+    "⇩",
+    "⇪",
+    "↩️",
+    "↪️",
+    "⤴️",
+    "⤵️",
   ],
   flowers: [
     "✿",
@@ -826,6 +941,35 @@ const symbolsData = {
     "🍂",
     "🍃",
     "🪺",
+    "🏵️",
+    "💮",
+    "🌼",
+    "🌻",
+    "🌺",
+    "🌹",
+    "🌷",
+    "🌸",
+    "💐",
+    "🪷",
+    "🪻",
+    "🌿",
+    "🌱",
+    "🌲",
+    "🌳",
+    "🌴",
+    "🌵",
+    "🪴",
+    "🎋",
+    "🎍",
+    "🍀",
+    "🍁",
+    "🍂",
+    "🍃",
+    "🍄",
+    "🌰",
+    "🎄",
+    "🌾",
+    "🌵",
   ],
   music: [
     "♪",
@@ -859,6 +1003,40 @@ const symbolsData = {
     "🎚",
     "🎛",
     "🪈",
+    "🎶",
+    "🎵",
+    "🎼",
+    "🎹",
+    "🎸",
+    "🎷",
+    "🎺",
+    "🎻",
+    "🥁",
+    "🪘",
+    "🪗",
+    "🪕",
+    "🪈",
+    "🎤",
+    "🎧",
+    "🔔",
+    "🔕",
+    "📯",
+    "🎺",
+    "📻",
+    "🔊",
+    "🔉",
+    "🔈",
+    "🔇",
+    "📢",
+    "📣",
+    "🎚️",
+    "🎛️",
+    "🎙️",
+    "🎤",
+    "🎧",
+    "🎵",
+    "🎶",
+    "🎼",
   ],
   zodiac: [
     "♈",
@@ -893,6 +1071,39 @@ const symbolsData = {
     "💫",
     "☄",
     "🪐",
+    "♈",
+    "♉",
+    "♊",
+    "♋",
+    "♌",
+    "♍",
+    "♎",
+    "♏",
+    "♐",
+    "♑",
+    "♒",
+    "♓",
+    "⛎",
+    "🔮",
+    "🧿",
+    "💫",
+    "✨",
+    "🌟",
+    "⭐",
+    "🌙",
+    "🌛",
+    "🌜",
+    "🌝",
+    "🌞",
+    "☀️",
+    "🌅",
+    "🌄",
+    "🌇",
+    "🌆",
+    "🌃",
+    "🌌",
+    "🌠",
+    "🌉",
   ],
   chess: [
     "♔",
@@ -922,6 +1133,30 @@ const symbolsData = {
     "♧",
     "♡",
     "♢",
+    "♔",
+    "♕",
+    "♖",
+    "♗",
+    "♘",
+    "♙",
+    "♚",
+    "♛",
+    "♜",
+    "♝",
+    "♞",
+    "♟️",
+    "🎯",
+    "🎱",
+    "🎲",
+    "🎰",
+    "🃏",
+    "🀄",
+    "🎴",
+    "🎭",
+    "🎪",
+    "🎢",
+    "🎡",
+    "🎠",
   ],
   currency: [
     "$",
@@ -962,6 +1197,19 @@ const symbolsData = {
     "￡",
     "￥",
     "￦",
+    "💰",
+    "💵",
+    "💴",
+    "💶",
+    "💷",
+    "💸",
+    "💳",
+    "💎",
+    "🪙",
+    "🏦",
+    "🏧",
+    "💲",
+    "🤑",
   ],
   math: [
     "∞",
@@ -1022,6 +1270,22 @@ const symbolsData = {
     "Ω",
     "φ",
     "ψ",
+    "Σ",
+    "Δ",
+    "Π",
+    "∂",
+    "∇",
+    "∀",
+    "∃",
+    "∄",
+    "∅",
+    "∆",
+    "∇",
+    "∈",
+    "∉",
+    "∋",
+    "∌",
+    "∍",
   ],
   weather: [
     "☀",
@@ -1040,7 +1304,7 @@ const symbolsData = {
     "☍",
     "⛅",
     "⛆",
-    "⛇",
+    "<|im_start|>",
     "⛈",
     "🌤",
     "🌥",
@@ -1064,6 +1328,177 @@ const symbolsData = {
     "⛄",
     "☔",
     "🌊",
+    "☀️",
+    "🌤️",
+    "⛅",
+    "🌥️",
+    "☁️",
+    "🌦️",
+    "🌧️",
+    "⛈️",
+    "🌩️",
+    "🌨️",
+    "❄️",
+    "🌬️",
+    "💨",
+    "🌪️",
+    "🌫️",
+    "🌈",
+    "☔",
+    "⛱️",
+    "🏖️",
+  ],
+  brackets: [
+    "【",
+    "】",
+    "「",
+    "」",
+    "『",
+    "』",
+    "〖",
+    "〗",
+    "〘",
+    "〙",
+    "〚",
+    "〛",
+    "《",
+    "》",
+    "〈",
+    "〉",
+    "⟨",
+    "⟩",
+    "⟪",
+    "⟫",
+    "⟬",
+    "⟭",
+    "⦃",
+    "⦄",
+    "⦅",
+    "⦆",
+    "⦇",
+    "⦈",
+    "⦉",
+    "⦊",
+    "⦋",
+    "⦌",
+    "⦍",
+    "⦎",
+    "⦏",
+    "⦐",
+    "⧼",
+    "⧽",
+    "❮",
+    "❯",
+    "❰",
+    "❱",
+    "❴",
+    "❵",
+    "⁅",
+    "⁆",
+    "⸢",
+    "⸣",
+    "⸤",
+    "⸥",
+    "⌈",
+    "⌉",
+    "⌊",
+    "⌋",
+    "〔",
+    "〕",
+    "〖",
+    "〗",
+    "〈",
+    "〉",
+    "《",
+    "》",
+    "「",
+    "」",
+    "『",
+    "』",
+    "【",
+    "】",
+  ],
+  lines: [
+    "─",
+    "━",
+    "│",
+    "┃",
+    "┄",
+    "┅",
+    "┆",
+    "┇",
+    "┈",
+    "┉",
+    "┊",
+    "┋",
+    "╌",
+    "╍",
+    "╎",
+    "╏",
+    "═",
+    "║",
+    "╒",
+    "╓",
+    "╔",
+    "╕",
+    "╖",
+    "╗",
+    "╘",
+    "╙",
+    "╚",
+    "╛",
+    "╜",
+    "╝",
+    "╞",
+    "╟",
+    "╠",
+    "╡",
+    "╢",
+    "╣",
+    "╤",
+    "╥",
+    "╦",
+    "╧",
+    "╨",
+    "╩",
+    "╪",
+    "╫",
+    "╬",
+    "╭",
+    "╮",
+    "╯",
+    "╰",
+    "╱",
+    "╲",
+    "╳",
+    "╴",
+    "╵",
+    "╶",
+    "╷",
+    "╸",
+    "╹",
+    "╺",
+    "╻",
+    "╼",
+    "╽",
+    "╾",
+    "╿",
+    "▀",
+    "▁",
+    "▂",
+    "▃",
+    "▄",
+    "▅",
+    "▆",
+    "▇",
+    "█",
+    "▉",
+    "▊",
+    "▋",
+    "▌",
+    "▍",
+    "▎",
+    "▏",
   ],
   misc: [
     "✓",
@@ -1146,11 +1581,6 @@ const symbolsData = {
     "♀",
     "♁",
     "♂",
-    "♃",
-    "♄",
-    "♅",
-    "♆",
-    "♇",
     "⚀",
     "⚁",
     "⚂",
@@ -1185,48 +1615,88 @@ const symbolsData = {
     "⚟",
     "⚠",
     "⚡",
+    "▲",
+    "△",
+    "▴",
+    "▵",
+    "▶",
+    "▷",
+    "▸",
+    "▹",
+    "►",
+    "▻",
+    "▼",
+    "▽",
+    "▾",
+    "▿",
+    "◀",
+    "◁",
+    "◂",
+    "◃",
+    "◄",
+    "◅",
+    "◆",
+    "◇",
+    "◈",
+    "◊",
+    "○",
+    "◌",
+    "◍",
+    "◎",
+    "●",
+    "◐",
+    "◑",
+    "◒",
+    "◓",
+    "◔",
+    "◕",
+    "◖",
+    "◗",
   ],
 }
 
-// ===== Decorations Data =====
+// ===== Extended Decorations =====
 const decorationsData = [
-  { name: "Stars Box", template: (text) => `✦━━━━━━✦\n${text}\n✦━━━━━━✦` },
-  { name: "Hearts Frame", template: (text) => `♥═══════♥\n║ ${text} ║\n♥═══════♥` },
-  { name: "Fancy Corners", template: (text) => `╔═══════╗\n║ ${text} ║\n╚═══════╝` },
-  { name: "Double Lines", template: (text) => `╔══════════╗\n║ ${text} ║\n╚══════════╝` },
-  { name: "Round Box", template: (text) => `╭──────────╮\n│ ${text} │\n╰──────────╯` },
-  { name: "Stars Border", template: (text) => `★═══════★\n☆ ${text} ☆\n★═══════★` },
-  { name: "Arrow Frame", template: (text) => `➤═══════➤\n➤ ${text} ➤\n➤═══════➤` },
-  { name: "Dots Frame", template: (text) => `•═══════•\n• ${text} •\n•═══════•` },
-  { name: "Diamond Frame", template: (text) => `◆═══════◆\n◇ ${text} ◇\n◆═══════◆` },
-  { name: "Music Frame", template: (text) => `♪═══════♪\n♫ ${text} ♫\n♪═══════♪` },
-  { name: "Crown Frame", template: (text) => `♔═══════♔\n♕ ${text} ♕\n♔═══════♔` },
-  { name: "Sparkle Box", template: (text) => `✨═══════✨\n✧ ${text} ✧\n✨═══════✨` },
-  { name: "Japanese Style", template: (text) => `『══════『\n』${text}『\n』══════』` },
-  { name: "Wings Style", template: (text) => `༺═══════༻\n༺ ${text} ༻\n༺═══════༻` },
-  { name: "Flower Box", template: (text) => `✿═══════✿\n❀ ${text} ❀\n✿═══════✿` },
-  { name: "Cloud Frame", template: (text) => `☁═══════☁\n☁ ${text} ☁\n☁═══════☁` },
-  { name: "Sun Frame", template: (text) => `☀═══════☀\n☼ ${text} ☼\n☀═══════☀` },
-  { name: "Simple Dashes", template: (text) => `─────────\n${text}\n─────────` },
-  { name: "Waves", template: (text) => `〰〰〰〰〰〰\n${text}\n〰〰〰〰〰〰` },
-  { name: "Dots Line", template: (text) => `•••••••••\n${text}\n•••••••••` },
-  { name: "Stars Line", template: (text) => `✦✦✦✦✦✦✦✦✦\n${text}\n✦✦✦✦✦✦✦✦✦` },
-  { name: "Hearts Line", template: (text) => `♥♥♥♥♥♥♥♥♥\n${text}\n♥♥♥♥♥♥♥♥♥` },
-  { name: "Fancy Script", template: (text) => `꧁༺ ${text} ༻꧂` },
-  { name: "Royal Style", template: (text) => `۩۞۩ ${text} ۩۞۩` },
-  { name: "Anime Style", template: (text) => `【 ${text} 】` },
-  { name: "Sparkle Surround", template: (text) => `•°•.°•. ${text} .•°.•°•` },
-  { name: "Star Burst", template: (text) => `☆.。.:* ${text} *.:。.☆` },
-  { name: "Elegant Curls", template: (text) => `❦ ${text} ❦` },
-  { name: "Arrow Surround", template: (text) => `➳➳➳ ${text} ➳➳➳` },
-  { name: "Lightning", template: (text) => `⚡ ${text} ⚡` },
-  { name: "Fire", template: (text) => `🔥 ${text} 🔥` },
-  { name: "Ice", template: (text) => `❄ ${text} ❄` },
-  { name: "Leaf", template: (text) => `🍃 ${text} 🍃` },
-  { name: "Music", template: (text) => `🎵 ${text} 🎵` },
-  { name: "Gaming", template: (text) => `🎮 ${text} 🎮` },
-  { name: "Coffee", template: (text) => `☕ ${text} ☕` },
-  { name: "Rocket", template: (text) => `🚀 ${text} 🚀` },
+  { name: "Stars Box", template: (t) => `✦━━━━━━✦\n    ${t}\n✦━━━━━━✦` },
+  { name: "Hearts Frame", template: (t) => `♥═══════♥\n║  ${t}  ║\n♥═══════♥` },
+  { name: "Fancy Corners", template: (t) => `╔═══════╗\n║  ${t}  ║\n╚═══════╝` },
+  { name: "Double Lines", template: (t) => `╔══════════╗\n║  ${t}  ║\n╚══════════╝` },
+  { name: "Round Box", template: (t) => `╭──────────╮\n│  ${t}  │\n╰──────────╯` },
+  { name: "Stars Border", template: (t) => `★═══════★\n☆  ${t}  ☆\n★═══════★` },
+  { name: "Arrow Frame", template: (t) => `➤═══════➤\n➤  ${t}  ➤\n➤═══════➤` },
+  { name: "Dots Frame", template: (t) => `•═══════•\n•  ${t}  •\n•═══════•` },
+  { name: "Diamond Frame", template: (t) => `◆═══════◆\n◇  ${t}  ◇\n◆═══════◆` },
+  { name: "Music Frame", template: (t) => `♪═══════♪\n♫  ${t}  ♫\n♪═══════♪` },
+  { name: "Crown Frame", template: (t) => `♔═══════♔\n♕  ${t}  ♕\n♔═══════♔` },
+  { name: "Sparkle Box", template: (t) => `✨═══════✨\n✧  ${t}  ✧\n✨═══════✨` },
+  { name: "Japanese Style", template: (t) => `『══════『\n  ${t}\n』══════』` },
+  { name: "Wings Style", template: (t) => `༺═══════༻\n༺  ${t}  ༻\n༺═══════༻` },
+  { name: "Flower Box", template: (t) => `✿═══════✿\n❀  ${t}  ❀\n✿═══════✿` },
+  { name: "Simple Dashes", template: (t) => `─────────\n   ${t}\n─────────` },
+  { name: "Waves", template: (t) => `〰〰〰〰〰〰\n  ${t}\n〰〰〰〰〰〰` },
+  { name: "Dots Line", template: (t) => `•••••••••\n  ${t}\n•••••••••` },
+  { name: "Stars Line", template: (t) => `✦✦✦✦✦✦✦✦✦\n  ${t}\n✦✦✦✦✦✦✦✦✦` },
+  { name: "Hearts Line", template: (t) => `♥♥♥♥♥♥♥♥♥\n  ${t}\n♥♥♥♥♥♥♥♥♥` },
+  { name: "Fancy Script", template: (t) => `꧁༺ ${t} ༻꧂` },
+  { name: "Royal Style", template: (t) => `۩۞۩ ${t} ۩۞۩` },
+  { name: "Anime Style", template: (t) => `【 ${t} 】` },
+  { name: "Sparkle Surround", template: (t) => `•°•.°•. ${t} .•°.•°•` },
+  { name: "Star Burst", template: (t) => `☆.。.:* ${t} *.:。.☆` },
+  { name: "Elegant Curls", template: (t) => `❦ ${t} ❦` },
+  { name: "Lightning", template: (t) => `⚡ ${t} ⚡` },
+  { name: "Fire", template: (t) => `🔥 ${t} 🔥` },
+  { name: "Ice", template: (t) => `❄ ${t} ❄` },
+  { name: "Gaming", template: (t) => `🎮 ${t} 🎮` },
+  { name: "Rocket", template: (t) => `🚀 ${t} 🚀` },
+  { name: "Magic", template: (t) => `✧･ﾟ: *✧ ${t} ✧* :ﾟ･✧` },
+  { name: "Fairy", template: (t) => `☾ ⋆*･ﾟ ${t} ﾟ･*⋆ ☽` },
+  { name: "Galaxy Box", template: (t) => `✧˖°.🌌.°˖✧\n  ${t}\n✧˖°.🌌.°˖✧` },
+  { name: "Cyber", template: (t) => `⟨⟨⟨ ${t} ⟩⟩⟩` },
+  { name: "Code Block", template: (t) => `{ ${t} }` },
+  { name: "Terminal", template: (t) => `> ${t} _` },
+  { name: "Cat Style", template: (t) => `=^._.^= ${t} =^._.^=` },
+  { name: "Bear Style", template: (t) => `ʕ•ᴥ•ʔ ${t} ʕ•ᴥ•ʔ` },
+  { name: "Happy Style", template: (t) => `(◕‿◕) ${t} (◕‿◕)` },
 ]
 
 // ===== Emojis Data =====
@@ -1336,6 +1806,14 @@ const emojisData = {
     "👽",
     "👾",
     "🤖",
+    "🫠",
+    "🫢",
+    "🫣",
+    "🫡",
+    "🥹",
+    "🫥",
+    "🫤",
+    "😶‍🌫️",
   ],
   gestures: [
     "👋",
@@ -1411,6 +1889,25 @@ const emojisData = {
     "🙇",
     "🤦",
     "🤷",
+    "🫰",
+    "🫱",
+    "🫲",
+    "🫳",
+    "🫴",
+    "🫵",
+    "🫶",
+    "🤌",
+    "🤏",
+    "👌",
+    "🤞",
+    "🤟",
+    "🤘",
+    "🤙",
+    "🖐",
+    "✋",
+    "👋",
+    "🤚",
+    "🖖",
   ],
   animals: [
     "🐶",
@@ -1530,6 +2027,15 @@ const emojisData = {
     "🐀",
     "🐿",
     "🦔",
+    "🦭",
+    "🦬",
+    "🦣",
+    "🦫",
+    "🦦",
+    "🦥",
+    "🦨",
+    "🦝",
+    "🦡",
   ],
   food: [
     "🍕",
@@ -1613,6 +2119,12 @@ const emojisData = {
     "🍽",
     "🍴",
     "🥄",
+    "🫙",
+    "🧊",
+    "🫘",
+    "🫛",
+    "🫜",
+    "🫠",
   ],
   activities: [
     "⚽",
@@ -1702,6 +2214,18 @@ const emojisData = {
     "🎮",
     "🎰",
     "🧩",
+    "🪀",
+    "🪁",
+    "🃏",
+    "🀄",
+    "🎴",
+    "🎭",
+    "🖼",
+    "🎨",
+    "🧵",
+    "🪡",
+    "🧶",
+    "🪢",
   ],
   travel: [
     "✈️",
@@ -1816,8 +2340,6 @@ const emojisData = {
     "🛕",
     "🕋",
     "⛩",
-    "🛤",
-    "🛣",
     "🗾",
     "🎑",
     "🏞",
@@ -2143,6 +2665,41 @@ const emojisData = {
     "🌌",
     "🌉",
     "🌁",
+    "🫧",
+    "🌊",
+    "💧",
+    "💦",
+    "☔",
+    "🌧",
+    "🌨",
+    "❄",
+    "🌩",
+    "⛈",
+    "🌪",
+    "🌫",
+    "🌬",
+    "🌀",
+    "🌈",
+    "☀️",
+    "🌤",
+    "⛅",
+    "🌥",
+    "☁️",
+    "🌦",
+    "🌧",
+    "⛈",
+    "🌩",
+    "🌨",
+    "❄️",
+    "🌬",
+    "💨",
+    "🌪",
+    "🌫",
+    "🌈",
+    "☔",
+    "⛱",
+    "🏖",
+    "🌊",
   ],
 }
 
@@ -2150,23 +2707,16 @@ const emojisData = {
 function transformText(text, alphabet) {
   const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   const lower = "abcdefghijklmnopqrstuvwxyz"
-
-  // Split the alphabet into upper and lower parts
   const alphaChars = [...alphabet]
   const upperAlpha = alphaChars.slice(0, 26)
   const lowerAlpha = alphaChars.slice(26, 52)
-
   return text
     .split("")
     .map((char) => {
       const upperIndex = upper.indexOf(char)
       const lowerIndex = lower.indexOf(char)
-
-      if (upperIndex !== -1 && upperAlpha[upperIndex]) {
-        return upperAlpha[upperIndex]
-      } else if (lowerIndex !== -1 && lowerAlpha[lowerIndex]) {
-        return lowerAlpha[lowerIndex]
-      }
+      if (upperIndex !== -1 && upperAlpha[upperIndex]) return upperAlpha[upperIndex]
+      if (lowerIndex !== -1 && lowerAlpha[lowerIndex]) return lowerAlpha[lowerIndex]
       return char
     })
     .join("")
@@ -2175,150 +2725,136 @@ function transformText(text, alphabet) {
 function copyToClipboard(text) {
   navigator.clipboard
     .writeText(text)
-    .then(() => {
-      showToast()
-    })
-    .catch((err) => {
-      // Fallback
-      const textArea = document.createElement("textarea")
-      textArea.value = text
-      document.body.appendChild(textArea)
-      textArea.select()
+    .then(() => showToast())
+    .catch(() => {
+      const ta = document.createElement("textarea")
+      ta.value = text
+      document.body.appendChild(ta)
+      ta.select()
       document.execCommand("copy")
-      document.body.removeChild(textArea)
+      document.body.removeChild(ta)
       showToast()
     })
 }
 
 function showToast() {
   const toast = document.getElementById("toast")
-  toast.classList.add("show")
+  toast.classList.remove("translate-y-24", "opacity-0", "pointer-events-none")
+  toast.classList.add("translate-y-0", "opacity-100")
   setTimeout(() => {
-    toast.classList.remove("show")
+    toast.classList.add("translate-y-24", "opacity-0", "pointer-events-none")
+    toast.classList.remove("translate-y-0", "opacity-100")
   }, 2000)
 }
 
 // ===== Generate Results =====
 function generateResults(text, filter = "all") {
-  const resultsGrid = document.getElementById("resultsGrid")
-  resultsGrid.innerHTML = ""
+  const grid = document.getElementById("resultsGrid")
+  grid.innerHTML = ""
+  const filtered = filter === "all" ? fontStyles : fontStyles.filter((s) => s.category === filter)
 
-  const filteredStyles = filter === "all" ? fontStyles : fontStyles.filter((style) => style.category === filter)
-
-  filteredStyles.forEach((style, index) => {
-    const transformedText = style.transform(text)
-
+  filtered.forEach((style, i) => {
+    const transformed = style.transform(text)
     const card = document.createElement("div")
-    card.className = "result-card"
+    card.className =
+      "group relative bg-dark-700 border border-white/10 rounded-2xl p-5 cursor-pointer transition-all duration-300 hover:bg-dark-600 hover:border-accent-purple/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent-purple/10"
+    card.style.animationDelay = `${i * 30}ms`
     card.innerHTML = `
-            <div class="result-header">
-                <span class="result-name">${style.name}</span>
-                <span class="result-badge">${style.category}</span>
-            </div>
-            <div class="result-text">${transformedText}</div>
-            <div class="result-footer">
-                <span class="copy-hint">Click to copy</span>
-                <span class="copy-icon">📋</span>
-            </div>
-        `
-
+      <div class="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-accent-purple to-accent-pink rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-xs font-medium text-gray-500 uppercase tracking-wider">${style.name}</span>
+        <span class="px-2.5 py-1 rounded-full bg-dark-600 text-[10px] font-medium text-accent-cyan uppercase">${style.category}</span>
+      </div>
+      <div class="text-lg text-white break-words leading-relaxed min-h-[3rem] flex items-center">${transformed}</div>
+      <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
+        <span class="text-xs text-gray-600">Click to copy</span>
+        <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-dark-600 group-hover:bg-accent-purple transition-colors">
+          <svg class="w-4 h-4 text-gray-500 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+      </div>
+    `
     card.addEventListener("click", () => {
-      copyToClipboard(transformedText)
-      card.classList.add("copied")
-      setTimeout(() => card.classList.remove("copied"), 1000)
+      copyToClipboard(transformed)
+      card.classList.add("ring-2", "ring-accent-green")
+      setTimeout(() => card.classList.remove("ring-2", "ring-accent-green"), 500)
     })
-
-    // Add animation delay
-    card.style.animationDelay = `${index * 0.03}s`
-    card.style.opacity = "0"
-    card.style.animation = "fadeInUp 0.4s ease forwards"
-
-    resultsGrid.appendChild(card)
+    grid.appendChild(card)
   })
 }
 
 // ===== Generate Symbols =====
 function generateSymbols(category = "stars") {
-  const symbolsGrid = document.getElementById("symbolsGrid")
-  symbolsGrid.innerHTML = ""
-
+  const grid = document.getElementById("symbolsGrid")
+  grid.innerHTML = ""
   const symbols = symbolsData[category] || symbolsData.stars
 
-  symbols.forEach((symbol, index) => {
+  symbols.forEach((symbol, i) => {
     const item = document.createElement("div")
-    item.className = "symbol-item"
+    item.className =
+      "aspect-square flex items-center justify-center bg-dark-600 border border-white/10 rounded-xl text-2xl cursor-pointer transition-all duration-200 hover:bg-dark-500 hover:border-accent-purple/50 hover:scale-110 hover:shadow-lg hover:shadow-accent-purple/20"
+    item.style.animationDelay = `${i * 15}ms`
     item.textContent = symbol
     item.title = `Click to copy: ${symbol}`
-
     item.addEventListener("click", () => {
       copyToClipboard(symbol)
-      item.classList.add("copied")
-      setTimeout(() => item.classList.remove("copied"), 500)
+      item.classList.add("bg-accent-green", "border-accent-green")
+      setTimeout(() => item.classList.remove("bg-accent-green", "border-accent-green"), 300)
     })
-
-    // Add animation
-    item.style.animationDelay = `${index * 0.02}s`
-    item.style.opacity = "0"
-    item.style.animation = "fadeIn 0.3s ease forwards"
-
-    symbolsGrid.appendChild(item)
+    grid.appendChild(item)
   })
 }
 
 // ===== Generate Decorations =====
 function generateDecorations(text) {
-  const decorationsGrid = document.getElementById("decorationsGrid")
-  decorationsGrid.innerHTML = ""
+  const grid = document.getElementById("decorationsGrid")
+  grid.innerHTML = ""
 
-  decorationsData.forEach((decoration, index) => {
-    const decoratedText = decoration.template(text)
-
+  decorationsData.forEach((dec, i) => {
+    const decorated = dec.template(text)
     const card = document.createElement("div")
-    card.className = "decoration-card"
+    card.className =
+      "bg-dark-700 border border-white/10 rounded-2xl p-5 text-center cursor-pointer transition-all duration-300 hover:bg-dark-600 hover:border-accent-purple/30 hover:-translate-y-1"
+    card.style.animationDelay = `${i * 30}ms`
     card.innerHTML = `
-            <div class="decoration-preview">${decoratedText}</div>
-            <div class="decoration-name">${decoration.name}</div>
-        `
-
-    card.addEventListener("click", () => {
-      copyToClipboard(decoratedText)
-    })
-
-    // Add animation
-    card.style.animationDelay = `${index * 0.03}s`
-    card.style.opacity = "0"
-    card.style.animation = "fadeInUp 0.4s ease forwards"
-
-    decorationsGrid.appendChild(card)
+      <div class="text-sm text-white font-mono whitespace-pre-wrap break-words leading-relaxed mb-3">${decorated}</div>
+      <div class="text-xs text-gray-600 uppercase tracking-wider">${dec.name}</div>
+    `
+    card.addEventListener("click", () => copyToClipboard(decorated))
+    grid.appendChild(card)
   })
 }
 
 // ===== Generate Emojis =====
 function generateEmojis(category = "smileys") {
-  const emojisGrid = document.getElementById("emojisGrid")
-  emojisGrid.innerHTML = ""
-
+  const grid = document.getElementById("emojisGrid")
+  grid.innerHTML = ""
   const emojis = emojisData[category] || emojisData.smileys
 
-  emojis.forEach((emoji, index) => {
+  emojis.forEach((emoji, i) => {
     const item = document.createElement("div")
-    item.className = "emoji-item"
+    item.className =
+      "aspect-square flex items-center justify-center bg-dark-600 border border-white/10 rounded-xl text-2xl cursor-pointer transition-all duration-200 hover:bg-dark-500 hover:scale-125"
+    item.style.animationDelay = `${i * 10}ms`
     item.textContent = emoji
     item.title = `Click to copy: ${emoji}`
-
     item.addEventListener("click", () => {
       copyToClipboard(emoji)
-      item.classList.add("copied")
-      setTimeout(() => item.classList.remove("copied"), 500)
+      item.classList.add("bg-accent-green")
+      setTimeout(() => item.classList.remove("bg-accent-green"), 300)
     })
-
-    // Add animation
-    item.style.animationDelay = `${index * 0.01}s`
-    item.style.opacity = "0"
-    item.style.animation = "fadeIn 0.2s ease forwards"
-
-    emojisGrid.appendChild(item)
+    grid.appendChild(item)
   })
+}
+
+// ===== Update Combiner =====
+function updateCombiner() {
+  const prefix = document.getElementById("prefixInput").value
+  const text = document.getElementById("combinerText").value
+  const suffix = document.getElementById("suffixInput").value
+  const result = `${prefix} ${text} ${suffix}`
+  document.getElementById("combinerResult").textContent = result
 }
 
 // ===== Event Listeners =====
@@ -2328,6 +2864,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const decorationInput = document.getElementById("decorationInput")
   const mobileMenuBtn = document.getElementById("mobileMenuBtn")
   const mobileMenu = document.getElementById("mobileMenu")
+  const combinerResult = document.getElementById("combinerResult")
+  const prefixInput = document.getElementById("prefixInput")
+  const combinerText = document.getElementById("combinerText")
+  const suffixInput = document.getElementById("suffixInput")
 
   // Initial generation
   generateResults(textInput.value)
@@ -2335,13 +2875,13 @@ document.addEventListener("DOMContentLoaded", () => {
   generateDecorations(decorationInput.value)
   generateEmojis("smileys")
 
-  // Text input handler with debounce
-  let debounceTimer
+  // Text input with debounce
+  let debounce
   textInput.addEventListener("input", () => {
-    clearTimeout(debounceTimer)
-    debounceTimer = setTimeout(() => {
-      const activeFilter = document.querySelector(".filter-tab.active").dataset.filter
-      generateResults(textInput.value, activeFilter)
+    clearTimeout(debounce)
+    debounce = setTimeout(() => {
+      const filter = document.querySelector(".filter-tab.bg-gradient-to-r")?.dataset.filter || "all"
+      generateResults(textInput.value, filter)
     }, 150)
   })
 
@@ -2349,15 +2889,27 @@ document.addEventListener("DOMContentLoaded", () => {
   clearBtn.addEventListener("click", () => {
     textInput.value = ""
     textInput.focus()
-    const activeFilter = document.querySelector(".filter-tab.active").dataset.filter
-    generateResults("", activeFilter)
+    generateResults("")
+  })
+
+  // Quick actions
+  document.querySelectorAll(".quick-action").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      textInput.value = btn.dataset.text
+      const filter = document.querySelector(".filter-tab.bg-gradient-to-r")?.dataset.filter || "all"
+      generateResults(textInput.value, filter)
+    })
   })
 
   // Filter tabs
   document.querySelectorAll(".filter-tab").forEach((tab) => {
     tab.addEventListener("click", () => {
-      document.querySelectorAll(".filter-tab").forEach((t) => t.classList.remove("active"))
-      tab.classList.add("active")
+      document.querySelectorAll(".filter-tab").forEach((t) => {
+        t.classList.remove("bg-gradient-to-r", "from-accent-purple", "to-accent-pink", "text-white")
+        t.classList.add("bg-dark-600", "text-gray-400")
+      })
+      tab.classList.add("bg-gradient-to-r", "from-accent-purple", "to-accent-pink", "text-white")
+      tab.classList.remove("bg-dark-600", "text-gray-400")
       generateResults(textInput.value, tab.dataset.filter)
     })
   })
@@ -2365,101 +2917,87 @@ document.addEventListener("DOMContentLoaded", () => {
   // Symbol tabs
   document.querySelectorAll(".symbol-tab").forEach((tab) => {
     tab.addEventListener("click", () => {
-      document.querySelectorAll(".symbol-tab").forEach((t) => t.classList.remove("active"))
-      tab.classList.add("active")
+      document.querySelectorAll(".symbol-tab").forEach((t) => {
+        t.classList.remove("bg-gradient-to-r", "from-accent-purple", "to-accent-pink", "text-white")
+        t.classList.add("bg-dark-600", "border", "border-white/10", "text-gray-400")
+      })
+      tab.classList.add("bg-gradient-to-r", "from-accent-purple", "to-accent-pink", "text-white")
+      tab.classList.remove("bg-dark-600", "border", "border-white/10", "text-gray-400")
       generateSymbols(tab.dataset.category)
     })
   })
 
   // Decoration input
-  let decorationDebounce
+  let decDebounce
   decorationInput.addEventListener("input", () => {
-    clearTimeout(decorationDebounce)
-    decorationDebounce = setTimeout(() => {
-      generateDecorations(decorationInput.value)
-    }, 150)
+    clearTimeout(decDebounce)
+    decDebounce = setTimeout(() => generateDecorations(decorationInput.value), 150)
   })
 
   // Emoji tabs
   document.querySelectorAll(".emoji-tab").forEach((tab) => {
     tab.addEventListener("click", () => {
-      document.querySelectorAll(".emoji-tab").forEach((t) => t.classList.remove("active"))
-      tab.classList.add("active")
+      document.querySelectorAll(".emoji-tab").forEach((t) => {
+        t.classList.remove("bg-gradient-to-r", "from-accent-purple", "to-accent-pink", "text-white")
+        t.classList.add("bg-dark-600", "border", "border-white/10", "text-gray-400")
+      })
+      tab.classList.add("bg-gradient-to-r", "from-accent-purple", "to-accent-pink", "text-white")
+      tab.classList.remove("bg-dark-600", "border", "border-white/10", "text-gray-400")
       generateEmojis(tab.dataset.emoji)
     })
   })
 
-  // Mobile menu toggle
+  // Mobile menu
   mobileMenuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active")
-    mobileMenuBtn.classList.toggle("active")
+    mobileMenu.classList.toggle("hidden")
+    const spans = mobileMenuBtn.querySelectorAll("span")
+    spans[0].classList.toggle("rotate-45")
+    spans[0].classList.toggle("translate-y-2")
+    spans[1].classList.toggle("opacity-0")
+    spans[2].classList.toggle("-rotate-45")
+    spans[2].classList.toggle("-translate-y-2")
   })
 
   // Close mobile menu on link click
-  document.querySelectorAll(".mobile-nav-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.remove("active")
-      mobileMenuBtn.classList.remove("active")
+  document
+    .querySelectorAll("#mobileMenu a")
+    .forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden")
+        const spans = mobileMenuBtn.querySelectorAll("span")
+        spans[0].classList.remove("rotate-45", "translate-y-2")
+        spans[1].classList.remove("opacity-0")
+        spans[2].classList.remove("-rotate-45", "-translate-y-2")
+      })
+    })
+
+  // Combiner inputs
+  ;[prefixInput, combinerText, suffixInput].forEach((input) => {
+    input.addEventListener("input", updateCombiner)
+  })
+
+  // Combiner presets
+  document.querySelectorAll(".combiner-preset").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      prefixInput.value = btn.dataset.prefix
+      suffixInput.value = btn.dataset.suffix
+      updateCombiner()
     })
   })
 
-  // Smooth scroll for nav links
+  // Combiner result click to copy
+  combinerResult.addEventListener("click", () => {
+    copyToClipboard(combinerResult.textContent)
+    combinerResult.classList.add("ring-2", "ring-accent-green")
+    setTimeout(() => combinerResult.classList.remove("ring-2", "ring-accent-green"), 500)
+  })
+
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault()
       const target = document.querySelector(this.getAttribute("href"))
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        })
-      }
-    })
-  })
-
-  // Active nav link on scroll
-  const sections = document.querySelectorAll("section[id]")
-  window.addEventListener("scroll", () => {
-    const scrollY = window.pageYOffset
-
-    sections.forEach((section) => {
-      const sectionHeight = section.offsetHeight
-      const sectionTop = section.offsetTop - 100
-      const sectionId = section.getAttribute("id")
-
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        document.querySelectorAll(".nav-link").forEach((link) => {
-          link.classList.remove("active")
-          if (link.getAttribute("href") === "#" + sectionId) {
-            link.classList.add("active")
-          }
-        })
-      }
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" })
     })
   })
 })
-
-// ===== CSS Animations =====
-const style = document.createElement("style")
-style.textContent = `
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`
-document.head.appendChild(style)
