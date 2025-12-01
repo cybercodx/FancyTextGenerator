@@ -3,50 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuxeType | Pro Font & Symbol Generator</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>𝓕𝓪𝓷𝓬𝔂 𝓣𝓮𝔁𝓽 Generator - Stylish Fonts & Symbols ✨</title>
+    <meta name="description" content="Free fancy text generator with 100+ stylish fonts, symbols, and decorations. Copy and paste fancy letters for Instagram, Discord, TikTok, and more!">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-symbols">
+            <span class="float-symbol">✦</span>
+            <span class="float-symbol">✧</span>
+            <span class="float-symbol">❋</span>
+            <span class="float-symbol">✿</span>
+            <span class="float-symbol">❀</span>
+            <span class="float-symbol">✵</span>
+            <span class="float-symbol">❂</span>
+            <span class="float-symbol">✺</span>
+            <span class="float-symbol">❃</span>
+            <span class="float-symbol">✤</span>
+            <span class="float-symbol">✥</span>
+            <span class="float-symbol">❊</span>
+        </div>
+    </div>
 
-    <div class="background-blobs"></div>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">𝓕𝓪𝓷𝓬𝔂𝓣𝓮𝔁𝓽</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#generator" class="nav-link active">Generator</a></li>
+                <li><a href="#symbols" class="nav-link">Symbols</a></li>
+                <li><a href="#decorations" class="nav-link">Decorations</a></li>
+                <li><a href="#emojis" class="nav-link">Emojis</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
 
-    <main class="container">
-        <header>
-            <div class="logo">
-                <i class="ri-quill-pen-line"></i> LuxeType
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#generator">Generator</a></li>
+            <li><a href="#symbols">Symbols</a></li>
+            <li><a href="#decorations">Decorations</a></li>
+            <li><a href="#emojis">Emojis</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">✨ 100+ Stylish Fonts</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">𝒞𝑜𝓅𝓎 𝒶𝓃𝒹 𝒫𝒶𝓈𝓉𝑒</span>
+                <br>
+                Fancy Text Generator
+            </h1>
+            <p class="hero-subtitle">
+                Transform your boring text into eye-catching stylish fonts instantly. 
+                Perfect for Instagram, Discord, TikTok, Twitter, and more!
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Font Styles</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Symbols</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">Free</span>
+                    <span class="stat-label">Forever</span>
+                </div>
             </div>
-            <h1>Generate <span class="gradient-text">Fancy Text</span></h1>
-            <p>Type below to transform your text into stylish unicode fonts & symbols.</p>
-        </header>
+        </div>
+    </section>
 
-        <section class="input-section">
+    <!-- Generator Section -->
+    <section id="generator" class="generator-section">
+        <div class="container">
             <div class="input-wrapper">
-                <input type="text" id="userInput" placeholder="Type something awesome here..." autocomplete="off">
-                <button id="clearBtn" title="Clear text"><i class="ri-close-circle-line"></i></button>
+                <label for="textInput" class="input-label">
+                    <span class="label-icon">✎</span>
+                    Enter your text
+                </label>
+                <div class="input-container">
+                    <textarea 
+                        id="textInput" 
+                        class="text-input" 
+                        placeholder="Type something awesome..."
+                        rows="3"
+                    >Fancy Text</textarea>
+                    <button class="clear-btn" id="clearBtn" title="Clear text">✕</button>
+                </div>
             </div>
-        </section>
 
-        <div class="section-title">
-            <i class="ri-font-size-2"></i> Generated Styles
-        </div>
-        <section class="output-grid" id="outputGrid">
-            <div class="placeholder-state">
-                <i class="ri-text"></i>
-                <p>Start typing to see the magic happen</p>
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Styles</button>
+                <button class="filter-tab" data-filter="fancy">Fancy</button>
+                <button class="filter-tab" data-filter="bold">Bold</button>
+                <button class="filter-tab" data-filter="cursive">Cursive</button>
+                <button class="filter-tab" data-filter="special">Special</button>
+                <button class="filter-tab" data-filter="decorated">Decorated</button>
             </div>
-        </section>
 
-        <div class="section-title" style="margin-top: 4rem;">
-            <i class="ri-vip-diamond-line"></i> Symbol Library
+            <!-- Font Results -->
+            <div class="results-grid" id="resultsGrid">
+                <!-- Results will be generated by JavaScript -->
+            </div>
         </div>
-        <section class="symbol-grid" id="symbolGrid">
-            </section>
-    </main>
+    </section>
 
-    <div id="toast" class="toast hidden">
-        <i class="ri-check-double-line"></i> Copied to clipboard!
+    <!-- Symbols Section -->
+    <section id="symbols" class="symbols-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">✦ Fancy Symbols & Characters</h2>
+                <p class="section-subtitle">Click any symbol to copy it instantly</p>
+            </div>
+
+            <!-- Symbol Categories -->
+            <div class="symbol-tabs">
+                <button class="symbol-tab active" data-category="stars">★ Stars</button>
+                <button class="symbol-tab" data-category="hearts">♥ Hearts</button>
+                <button class="symbol-tab" data-category="arrows">→ Arrows</button>
+                <button class="symbol-tab" data-category="flowers">✿ Flowers</button>
+                <button class="symbol-tab" data-category="music">♪ Music</button>
+                <button class="symbol-tab" data-category="zodiac">♈ Zodiac</button>
+                <button class="symbol-tab" data-category="chess">♔ Chess</button>
+                <button class="symbol-tab" data-category="currency">$ Currency</button>
+                <button class="symbol-tab" data-category="math">∑ Math</button>
+                <button class="symbol-tab" data-category="weather">☀ Weather</button>
+                <button class="symbol-tab" data-category="misc">✤ Misc</button>
+            </div>
+
+            <div class="symbols-grid" id="symbolsGrid">
+                <!-- Symbols will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Decorations Section -->
+    <section id="decorations" class="decorations-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">❋ Text Decorations</h2>
+                <p class="section-subtitle">Add beautiful borders and frames to your text</p>
+            </div>
+
+            <div class="decoration-input-wrapper">
+                <input 
+                    type="text" 
+                    id="decorationInput" 
+                    class="decoration-input" 
+                    placeholder="Your text here..."
+                    value="Hello World"
+                >
+            </div>
+
+            <div class="decorations-grid" id="decorationsGrid">
+                <!-- Decorations will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Emojis Section -->
+    <section id="emojis" class="emojis-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">😀 Emoji Collection</h2>
+                <p class="section-subtitle">Browse and copy emojis by category</p>
+            </div>
+
+            <div class="emoji-tabs">
+                <button class="emoji-tab active" data-emoji="smileys">😀 Smileys</button>
+                <button class="emoji-tab" data-emoji="gestures">👋 Gestures</button>
+                <button class="emoji-tab" data-emoji="animals">🐱 Animals</button>
+                <button class="emoji-tab" data-emoji="food">🍕 Food</button>
+                <button class="emoji-tab" data-emoji="activities">⚽ Activities</button>
+                <button class="emoji-tab" data-emoji="travel">✈️ Travel</button>
+                <button class="emoji-tab" data-emoji="objects">💡 Objects</button>
+                <button class="emoji-tab" data-emoji="nature">🌸 Nature</button>
+            </div>
+
+            <div class="emojis-grid" id="emojisGrid">
+                <!-- Emojis will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">𝓕𝓪𝓷𝓬𝔂𝓣𝓮𝔁𝓽</span>
+                </div>
+                <p class="footer-text">
+                    Transform your text into beautiful stylish fonts. Free forever.
+                </p>
+                <div class="footer-links">
+                    <a href="#generator">Generator</a>
+                    <a href="#symbols">Symbols</a>
+                    <a href="#decorations">Decorations</a>
+                    <a href="#emojis">Emojis</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FancyText Generator. Made with ♥</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Copied to clipboard!</span>
     </div>
 
     <script src="script.js"></script>
