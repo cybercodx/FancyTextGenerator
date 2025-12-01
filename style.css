@@ -23,6 +23,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
+    padding-bottom: 4rem;
 }
 
 /* Background Effects */
@@ -39,7 +40,7 @@ body {
 
 /* Container */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 3rem 1.5rem;
 }
@@ -85,12 +86,12 @@ header p {
     position: sticky;
     top: 1rem;
     z-index: 10;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .input-wrapper {
     position: relative;
-    background: rgba(30, 41, 59, 0.8);
+    background: rgba(30, 41, 59, 0.85);
     backdrop-filter: var(--glass);
     padding: 0.5rem;
     border-radius: 1rem;
@@ -125,7 +126,20 @@ input {
     color: var(--secondary);
 }
 
-/* Output Grid */
+/* Section Titles */
+.section-title {
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Output Grid (Fonts) */
 .output-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -141,6 +155,10 @@ input {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .font-card:hover {
@@ -151,18 +169,54 @@ input {
 }
 
 .font-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text-muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-weight: 600;
 }
 
 .font-preview {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     word-break: break-word;
     line-height: 1.5;
+}
+
+/* Symbol Grid */
+.symbol-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.symbol-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.symbol-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--secondary);
+}
+
+.symbol-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.symbol-content {
+    font-size: 1rem;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: monospace;
 }
 
 /* Placeholder State */
@@ -209,4 +263,5 @@ input {
     h1 { font-size: 2rem; }
     .container { padding: 2rem 1rem; }
     .output-grid { grid-template-columns: 1fr; }
+    .symbol-grid { grid-template-columns: 1fr 1fr; }
 }
